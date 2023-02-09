@@ -1,0 +1,86 @@
+@import "./variables";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+span,
+a {
+  font-family: "Unbounded", cursive;
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background: $bgColor;
+  color: white;
+  font-size: 16px;
+  line-height: 157.52%;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  background: $bgColor;
+}
+
+.container {
+  max-width: 1330px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  div {
+    height: 2px;
+    background: $yellow;
+  }
+  h2 {
+    flex-shrink: 0;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    span {
+      color: $yellow;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}

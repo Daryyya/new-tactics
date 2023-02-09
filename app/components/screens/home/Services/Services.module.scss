@@ -1,0 +1,67 @@
+@import "../../../../assets/styles/variables";
+
+.services {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: $bgColor;
+
+  .servicesItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 55px;
+
+    h4 {
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #878585;
+      font-size: 25px;
+      line-height: 30px;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      &:hover {
+        color: white;
+      }
+      &.active {
+        color: white;
+      }
+    }
+  }
+  .serviceBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+      h2 {
+        font-size: 51px;
+        line-height: 61px;
+        max-width: 640px;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 23px;
+        line-height: 27px;
+        max-width: 643px;
+        color: #c4c4c4;
+        margin-bottom: 33px;
+      }
+
+      button {
+        text-transform: uppercase;
+        font-size: 22px;
+        line-height: 26px;
+        padding: 14px 39px;
+        background: $yellow;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+        &:hover {
+          background: $yellowHover;
+          color: white;
+        }
+      }
+    }
+  }
+}

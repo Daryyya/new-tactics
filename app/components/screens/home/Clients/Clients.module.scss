@@ -1,0 +1,32 @@
+@import "../../../../assets/styles/variables";
+
+.clients {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  .clientsBody {
+    display: flex;
+    justify-content: space-between;
+    background: #1a172d;
+    padding: 75px 66px;
+    margin-top: 50px;
+
+    .clientsItem {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      h3 {
+        color: $yellow;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 7px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+}

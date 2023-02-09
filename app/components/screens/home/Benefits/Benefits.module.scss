@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/variables";
+.benefits {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: $lighterBg;
+  z-index: 20;
+
+  .benefitsBody {
+    display: flex;
+    justify-content: space-between;
+    .info {
+      max-width: 610px;
+
+      .benefitsItems {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 21px;
+        margin-bottom: 35px;
+      }
+
+      .benefitsItem {
+        display: flex;
+        align-items: center;
+        align-items: flex-start;
+        gap: 11px;
+
+        h3 {
+          max-width: 226px;
+        }
+      }
+      p {
+        font-size: 16px;
+        line-height: 157.52%;
+        color: #c6c6c6;
+      }
+    }
+  }
+}

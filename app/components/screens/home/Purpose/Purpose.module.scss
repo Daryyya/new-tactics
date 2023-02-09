@@ -1,0 +1,60 @@
+@import "../../../../assets/styles/variables";
+
+.purpose {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.purposeTop {
+  margin-top: 50px;
+  margin-bottom: 60px;
+  .purposeTitle {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    margin-bottom: 25px;
+    h2 {
+      font-size: 49px;
+    }
+  }
+
+  .text {
+    display: flex;
+    padding-left: 95px;
+    align-items: center;
+    gap: 26px;
+
+    .paragraphLine {
+      height: 79px;
+      width: 1px;
+      background: $yellow;
+    }
+
+    p {
+      font-size: 32px;
+      line-height: 38px;
+      color: #c6c6c6;
+      max-width: 844px;
+    }
+  }
+}
+
+.purposeBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .descr {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 70px;
+    gap: 25px;
+
+    p {
+      font-size: 24px;
+      line-height: 28px;
+      color: #c6c6c6;
+      max-width: 643px;
+    }
+  }
+}

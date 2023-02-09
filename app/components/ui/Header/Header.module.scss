@@ -1,0 +1,51 @@
+@import "../../../assets/styles/variables";
+
+.header {
+  .headerBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+
+    .menuList {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+
+      a {
+        transition: all 0.2s ease;
+        &:hover {
+          color: rgba($color: #fff, $alpha: 0.5);
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+
+      .phone {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: opacity 0.2s ease;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .button {
+        background: $yellow;
+        color: black;
+        padding: 10px 25px;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+        &:hover {
+          background: $yellowHover;
+          color: white;
+        }
+      }
+    }
+  }
+}

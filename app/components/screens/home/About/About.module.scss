@@ -1,0 +1,31 @@
+@import "../../../../assets/styles/variables";
+
+.about {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  .aboutItems {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 100px;
+    column-gap: 158px;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    .aboutItem {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      h3 {
+        font-size: 72px;
+        line-height: 80px;
+        color: $yellow;
+      }
+
+      p {
+        max-width: 288px;
+      }
+    }
+  }
+}

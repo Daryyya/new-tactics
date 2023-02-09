@@ -1,0 +1,44 @@
+.team {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  .teamBody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+
+    .teamItem {
+      background: #1a172d;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding-top: 80px;
+      padding-bottom: 41px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      .image {
+        position: absolute;
+        top: -50px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #c6c6c6;
+        font-weight: 500;
+      }
+    }
+  }
+}
