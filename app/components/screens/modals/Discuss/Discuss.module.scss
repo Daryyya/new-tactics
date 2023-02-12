@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/variables";
+
+.discuss {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+
+  .content {
+    background: #1a172d;
+    border-radius: 5px;
+    padding: 41px 100px;
+    position: relative;
+
+    .closeBtn {
+      position: absolute;
+      top: 24px;
+      right: 37px;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    h2 {
+      font-size: 25px;
+      line-height: 54px;
+      margin-bottom: 26px;
+    }
+  }
+}

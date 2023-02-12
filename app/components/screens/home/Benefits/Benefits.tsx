@@ -14,7 +14,7 @@ const Benefits: FC = () => {
     <section className={styles.benefits}>
       <div className="container">
         <div className={styles.benefitsBody}>
-          <div>
+          <div className={styles.image}>
             <Image src={benefitsImg} alt="наша команда" />
           </div>
           <div className={styles.info}>
