@@ -1,12 +1,15 @@
-import { designSvg } from "@/assets/images/home";
-import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./Services.module.scss";
 import { motion } from "framer-motion";
+import { servicesItems } from "@/utils/services.data";
+import { Design } from "./Design";
+import { Development } from "./Development";
 
 const Services: FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section className={styles.services}>
+    <section id="services" className={styles.services}>
       <div className="container">
         <div className="line">
           <motion.div
@@ -28,33 +31,21 @@ const Services: FC = () => {
           transition={{ duration: 0.5 }}
           className={styles.servicesItems}
         >
-          <h4 className={styles.active}>ДИЗАЙН</h4>
-          <h4>РАЗРАБОТКА</h4>
-          <h4>ОПТИМИЗАЦИЯ И ЗАЩИТА</h4>
-          <h4>ПОДДЕРЖКА</h4>
+          {servicesItems.map((item, index) => (
+            <h4
+              className={activeIndex === index ? `${styles.active}` : ""}
+              onClick={() => setActiveIndex(index)}
+              key={item}
+            >
+              {item}
+            </h4>
+          ))}
         </motion.div>
-        <div className={styles.serviceBlock}>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Image src={designSvg} alt="дизайн" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className={styles.info}
-          >
-            <h2>Проектирование и дизайн</h2>
-            <p>
-              Компания специализируется на создании, сопровождении и развитии
-              технологичных корпоративных систем и мобильных приложений.
-            </p>
-            <button>перейти к услуге</button>
-          </motion.div>
-        </div>
+        {activeIndex === 0 ? (
+          <Design />
+        ) : activeIndex === 1 ? (
+          <Development />
+        ) : null}
       </div>
     </section>
   );

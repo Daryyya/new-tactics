@@ -48,7 +48,7 @@ const Purpose: FC = () => {
             className={styles.purposeBottom}
           >
             <div>
-              <Image src={purposeImg} alt="код" />
+              <Image className={styles.image} src={purposeImg} alt="код" />
             </div>
             <div>
               <div className={styles.descr}>

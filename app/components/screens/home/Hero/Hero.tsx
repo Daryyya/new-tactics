@@ -38,7 +38,7 @@ const Hero: FC = () => {
             </button>
           </div>
           <div>
-            <Image src={macbook} alt="laptop" />
+            <Image className={styles.heroImage} src={macbook} alt="laptop" />
           </div>
         </div>
       </div>

@@ -29,6 +29,7 @@ import vkSvg from "./vk.svg";
 import telegramSvg from "./telegram.svg";
 import ministerImg from "./minister.png";
 import securitySvg from "./security.svg";
+import developmentSvg from "./development.svg";
 
 export {
   logo,
@@ -62,4 +63,5 @@ export {
   telegramSvg,
   ministerImg,
   securitySvg,
+  developmentSvg,
 };

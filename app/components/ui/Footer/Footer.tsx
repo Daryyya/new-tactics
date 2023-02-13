@@ -15,7 +15,7 @@ import styles from "./Footer.module.scss";
 
 export const Footer: FC = () => {
   return (
-    <footer className={styles.footer}>
+    <footer id="contacts" className={styles.footer}>
       <div className="container">
         <div className={styles.footerBody}>
           <div className={styles.info}>

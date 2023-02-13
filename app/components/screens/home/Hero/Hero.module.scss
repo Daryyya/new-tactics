@@ -45,3 +45,10 @@
     }
   }
 }
+
+// Скрываю картинку на 992px
+.heroImage {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}

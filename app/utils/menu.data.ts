@@ -9,14 +9,14 @@ export const menuData: IMenuData[] = [
   },
   {
     text: "Услуги",
-    href: "/services",
+    href: "/#services",
   },
   {
     text: "Реализованные проекты",
-    href: "/cases",
+    href: "/#cases",
   },
   {
     text: "Контакты",
-    href: "/contacts",
+    href: "/#contacts",
   },
 ];

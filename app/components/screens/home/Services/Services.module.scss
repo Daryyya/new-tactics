@@ -1,4 +1,5 @@
 @import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
 
 .services {
   padding-top: 70px;
@@ -7,6 +8,8 @@
 
   .servicesItems {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
@@ -16,7 +19,7 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: #878585;
-      font-size: 25px;
+      @include adaptiv-value("font-size", 25, 16, 0);
       line-height: 30px;
       cursor: pointer;
       transition: color 0.2s ease;
@@ -32,17 +35,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
+    .servicesImage {
+      @include adaptiv-value("width", 550, 350, 0);
+    }
 
     .info {
       h2 {
-        font-size: 51px;
-        line-height: 61px;
+        @include adaptiv-value("font-size", 51, 33, 0);
+        @include adaptiv-value("line-height", 61, 43, 0);
         max-width: 640px;
         margin-bottom: 30px;
       }
 
       p {
-        font-size: 23px;
+        @include adaptiv-value("font-size", 23, 18, 0);
         line-height: 27px;
         max-width: 643px;
         color: #c4c4c4;

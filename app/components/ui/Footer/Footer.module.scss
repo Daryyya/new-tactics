@@ -8,6 +8,12 @@
     align-items: flex-start;
     gap: 62px;
 
+    .map {
+      @media (max-width: 1400px) {
+        display: none;
+      }
+    }
+
     .info {
       h5 {
         color: $yellow;

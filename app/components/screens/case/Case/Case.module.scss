@@ -1,0 +1,40 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+.case {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  .caseBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      @include adaptiv-value("gap", 20, 15, 0);
+
+      h1 {
+        @include adaptiv-value("font-size", 42, 33, 0);
+        max-width: 600px;
+        @include adaptiv-value("line-height", 52, 43, 0);
+      }
+      p {
+        @include adaptiv-value("font-size", 18, 14, 0);
+        max-width: 600px;
+      }
+
+      a {
+        background: $yellow;
+        text-align: center;
+        color: black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: all 0.2s ease;
+        &:hover {
+          background: $yellowHover;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,13 @@
 import { FC } from "react";
 import styles from "./Cases.module.scss";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { firstCase } from "@/assets/images/home";
+
+import { casesData } from "@/utils/cases.data";
+import CasesItem from "./CasesItem";
 
 const Cases: FC = () => {
   return (
-    <section className={styles.cases}>
+    <section id="cases" className={styles.cases}>
       <div className="container">
         <div className="line">
           <motion.div
@@ -23,70 +24,15 @@ const Cases: FC = () => {
           </motion.h2>
         </div>
         <div className={styles.casesItems}>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.casesItem}
-          >
-            <Image src={firstCase} alt="кейс" />
-            <div className={styles.hoverBlock}>
-              <h3>Finance (fullstack)</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <button>Перейти к проекту</button>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.casesItem}
-          >
-            <Image src={firstCase} alt="кейс" />
-            <div className={styles.hoverBlock}>
-              <h3>Finance (fullstack)</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <button>Перейти к проекту</button>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.casesItem}
-          >
-            <Image src={firstCase} alt="кейс" />
-            <div className={styles.hoverBlock}>
-              <h3>Finance (fullstack)</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <button>Перейти к проекту</button>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.casesItem}
-          >
-            <Image src={firstCase} alt="кейс" />
-            <div className={styles.hoverBlock}>
-              <h3>Finance (fullstack)</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <button>Перейти к проекту</button>
-            </div>
-          </motion.div>
+          {casesData.map((item) => (
+            <CasesItem
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              description={item.description}
+              imageUrl={item.imageUrl}
+            />
+          ))}
         </div>
       </div>
     </section>

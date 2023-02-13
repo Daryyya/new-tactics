@@ -32,7 +32,11 @@ const Header: FC = () => {
               <ul className={styles.menuList}>
                 {menuData.map((item) => (
                   <li key={item.href}>
-                    <Link onClick={() => setIsOpenMenu(false)} href={item.href}>
+                    <Link
+                      scroll={false}
+                      onClick={() => setIsOpenMenu(false)}
+                      href={item.href}
+                    >
                       {item.text}
                     </Link>
                   </li>

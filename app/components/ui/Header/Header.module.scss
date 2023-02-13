@@ -14,7 +14,7 @@
         top: 0;
         right: 0;
         background: $lighterBg;
-        width: 70vw;
+        width: 60vw;
         height: 100vh;
         z-index: 20;
         display: flex;
@@ -33,6 +33,7 @@
       @media (max-width: 992px) {
         @include adaptiv-value("gap", 40, 20, 0);
         flex-direction: column;
+        align-items: flex-end;
       }
 
       a {
@@ -40,6 +41,9 @@
         @include adaptiv-value("font-size", 16, 12, 0);
         &:hover {
           color: rgba($color: #fff, $alpha: 0.5);
+        }
+        @media (max-width: 992px) {
+          @include adaptiv-value("font-size", 33, 20, 0);
         }
       }
     }
