@@ -7,7 +7,7 @@
   .casesItems {
     margin-top: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 21px;
     @media (max-width: 1300px) {
@@ -17,11 +17,15 @@
     .casesItem {
       background: #1a172d;
       padding: 80px 57px;
-      @include adaptiv-value("padding-top", 80, 40, 0);
-      @include adaptiv-value("padding-bottom", 80, 40, 0);
-      @include adaptiv-value("padding-left", 57, 25, 0);
-      @include adaptiv-value("padding-right", 57, 25, 0);
+      // @include adaptiv-value("padding-top", 80, 40, 0);
+      // @include adaptiv-value("padding-bottom", 80, 40, 0);
+      // @include adaptiv-value("padding-left", 57, 25, 0);
+      // @include adaptiv-value("padding-right", 57, 25, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 15px;
+      min-width: 600px;
       position: relative;
       cursor: pointer;
       &:hover {
@@ -29,6 +33,10 @@
           opacity: 1;
           transform: scale(1);
         }
+      }
+
+      img {
+        object-fit: cover;
       }
     }
     .hoverBlock {

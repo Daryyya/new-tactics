@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./Services.module.scss";
 import Image from "next/image";
 import { designSvg } from "@/assets/images/home";
+import Link from "next/link";
 
 export const Design: FC = () => {
   return (
@@ -23,10 +24,11 @@ export const Design: FC = () => {
       >
         <h2>Проектирование и дизайн</h2>
         <p>
-          Компания специализируется на создании, сопровождении и развитии
-          технологичных корпоративных систем и мобильных приложений.
+          Проектирование программных интерфейсов (UI/UX). Создание
+          пользовательской логики. Отрисовка уникального дизайн-макета по
+          запросам клиента.
         </p>
-        <button>перейти к услуге</button>
+        <Link href="/design">перейти к услуге</Link>
       </motion.div>
     </div>
   );

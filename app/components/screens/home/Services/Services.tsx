@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { servicesItems } from "@/utils/services.data";
 import { Design } from "./Design";
 import { Development } from "./Development";
+import { Optimization } from "./Optimization";
+import { Support } from "./Support";
 
 const Services: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,6 +47,10 @@ const Services: FC = () => {
           <Design />
         ) : activeIndex === 1 ? (
           <Development />
+        ) : activeIndex === 2 ? (
+          <Optimization />
+        ) : activeIndex === 3 ? (
+          <Support />
         ) : null}
       </div>
     </section>

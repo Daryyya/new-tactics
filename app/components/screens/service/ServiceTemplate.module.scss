@@ -1,0 +1,100 @@
+@import "../../../assets/styles/variables";
+
+.service {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .serviceBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .serviceInfo {
+      .serviceInfoLabel {
+        display: flex;
+        align-items: center;
+        gap: 21px;
+        margin-bottom: 24px;
+
+        p {
+          text-transform: uppercase;
+          font-size: 24px;
+          margin-bottom: 0;
+        }
+
+        a {
+          background: #81536f;
+          border-radius: 4px;
+          padding: 4px 29px;
+          font-size: 20px;
+          line-height: 24px;
+          color: white;
+          transition: opacity 0.2s ease;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      h1 {
+        max-width: 750px;
+        font-size: 60px;
+        line-height: 71px;
+        text-transform: uppercase;
+        margin-bottom: 27px;
+      }
+      p {
+        max-width: 636px;
+        font-size: 20px;
+        line-height: 161.52%;
+        color: #c6c6c6;
+        margin-bottom: 27px;
+      }
+
+      button {
+        width: 100%;
+        text-align: center;
+        background: $yellow;
+        color: black;
+        font-size: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+        &:hover {
+          background: $yellowHover;
+          color: white;
+        }
+      }
+    }
+
+    .serviceAction {
+      max-width: 489px;
+      h2 {
+        font-size: 41px;
+        line-height: 49px;
+        margin-bottom: 19px;
+      }
+
+      p {
+        font-size: 27px;
+        line-height: 33px;
+        color: #c6c6c6;
+        margin-bottom: 19px;
+      }
+
+      button {
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: $yellow;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+        &:hover {
+          background: $yellowHover;
+          color: white;
+        }
+      }
+    }
+  }
+}

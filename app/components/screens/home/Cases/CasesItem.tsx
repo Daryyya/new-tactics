@@ -17,7 +17,7 @@ const CasesItem: FC<ICasesData> = ({ id, title, description, imageUrl }) => {
       className={styles.casesItem}
       onClick={() => router.push(`case/${id}`)}
     >
-      <Image src={imageUrl} width={525} height={297} alt="кейс" />
+      <img src={imageUrl} alt="кейс" />
       <div className={styles.hoverBlock}>
         <h3>{title}</h3>
         <p>{description}</p>

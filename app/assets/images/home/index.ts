@@ -30,6 +30,8 @@ import telegramSvg from "./telegram.svg";
 import ministerImg from "./minister.png";
 import securitySvg from "./security.svg";
 import developmentSvg from "./development.svg";
+import optimizationSvg from "./optimization.svg";
+import supportImg from "./support-img.png";
 
 export {
   logo,
@@ -64,4 +66,6 @@ export {
   ministerImg,
   securitySvg,
   developmentSvg,
+  optimizationSvg,
+  supportImg,
 };

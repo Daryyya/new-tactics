@@ -20,13 +20,7 @@ export const Case: FC<Omit<ICasesData, "id">> = ({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Image
-              className={styles.image}
-              width={500}
-              height={300}
-              src={imageUrl}
-              alt={title}
-            />
+            <img className={styles.image} src={imageUrl} alt={title} />
           </motion.div>
           <motion.div
             className={styles.info}

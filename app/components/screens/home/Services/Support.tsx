@@ -1,12 +1,13 @@
 import { FC } from "react";
 
 import { motion } from "framer-motion";
+
 import styles from "./Services.module.scss";
 import Image from "next/image";
-import { developmentSvg } from "@/assets/images/home";
+import { supportImg } from "@/assets/images/home";
 import Link from "next/link";
 
-export const Development: FC = () => {
+export const Support: FC = () => {
   return (
     <div className={styles.serviceBlock}>
       <motion.div
@@ -16,7 +17,7 @@ export const Development: FC = () => {
       >
         <Image
           className={styles.servicesImage}
-          src={developmentSvg}
+          src={supportImg}
           alt="разработка"
         />
       </motion.div>
@@ -26,13 +27,13 @@ export const Development: FC = () => {
         transition={{ duration: 0.7 }}
         className={styles.info}
       >
-        <h2>Разработка</h2>
+        <h2>Поддержка</h2>
         <p>
-          Программирование пользовательских моделей и интерфейсов любой
-          сложности с использование всех современных инструментов разработки и
-          авторских библиотек
+          Поддерживаем технически проект после разработки и запуска. Обновляем и
+          расширяем любую систему по запросу нашего клиента, а также следим за
+          постоянной работоспособностью системы.
         </p>
-        <Link href="/development">перейти к услуге</Link>
+        <Link href="/support">перейти к услуге</Link>
       </motion.div>
     </div>
   );
