@@ -20,9 +20,9 @@ const CaseItem = () => {
         description={currentItem?.description}
       >
         <Case
-          title={currentItem?.title}
-          description={currentItem?.description}
-          imageUrl={currentItem?.imageUrl}
+          title={currentItem?.title ? currentItem.title : ""}
+          description={currentItem?.description ? currentItem.description : ""}
+          imageUrl={currentItem?.imageUrl ? currentItem.imageUrl : ""}
         />
       </Layout>
     </>
