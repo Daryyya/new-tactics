@@ -6,7 +6,12 @@ import Image from "next/image";
 import { ICasesData } from "@/utils/cases.data";
 import { useRouter } from "next/router";
 
-const CasesItem: FC<ICasesData> = ({ id, title, description, imageUrl }) => {
+const CasesItem: FC<Omit<ICasesData, "results">> = ({
+  id,
+  title,
+  description,
+  imageUrl,
+}) => {
   const router = useRouter();
 
   return (
