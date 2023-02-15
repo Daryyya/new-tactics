@@ -10,6 +10,7 @@ export const Case: FC<Omit<ICasesData, "id">> = ({
   title,
   description,
   imageUrl,
+  results,
 }) => {
   return (
     <section className={styles.case}>
@@ -30,6 +31,11 @@ export const Case: FC<Omit<ICasesData, "id">> = ({
           >
             <h1>{title}</h1>
             <p>{description}</p>
+            {results.map((result) => (
+              <p className={styles.result} key={result}>
+                - {result}
+              </p>
+            ))}
             <Link href="/">Вернуться на главную</Link>
           </motion.div>
         </div>

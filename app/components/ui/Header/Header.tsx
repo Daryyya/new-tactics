@@ -21,9 +21,9 @@ const Header: FC = () => {
       <header className={styles.header}>
         <div className="container">
           <div className={styles.headerBody}>
-            <div className={styles.logo}>
+            <Link href="/" className={styles.logo}>
               <Image src={logo} alt="program tactics" />
-            </div>
+            </Link>
             <nav
               style={{
                 transform: `${isOpenMenu ? "translateY(0)" : ""}`,

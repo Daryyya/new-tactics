@@ -10,7 +10,6 @@ interface IServiceTemplate {
   description: string;
   label: string;
   mainContent: string;
-  programProducts: string[];
 }
 
 export const ServiceTemplate: FC<IServiceTemplate> = ({
@@ -18,7 +17,6 @@ export const ServiceTemplate: FC<IServiceTemplate> = ({
   title,
   description,
   mainContent,
-  programProducts,
 }) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   return (
@@ -37,12 +35,6 @@ export const ServiceTemplate: FC<IServiceTemplate> = ({
                 <Link href="/">На главную</Link>
               </div>
               <h1>{title}</h1>
-              <div className={styles.programProducts}>
-                <h3>Программные продукты</h3>
-                {programProducts.map((product) => (
-                  <p key={product}>- {product}</p>
-                ))}
-              </div>
 
               <p>{description}</p>
               <p className={styles.mainContent}>{mainContent}</p>

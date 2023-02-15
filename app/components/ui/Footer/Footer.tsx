@@ -59,13 +59,6 @@ export const Footer: FC = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.documents}>
-              <h4>Документы</h4>
-              <p>Коммерческое предложение</p>
-              <p>Портфолио проектов</p>
-              <p>Marketing - Kit</p>
-              <p>Свидетельство о добавление в реестр IT - компаний</p>
-            </div>
             <div className={styles.social}>
               <div>
                 <Image src={vkSvg} alt="Вконтакте" />

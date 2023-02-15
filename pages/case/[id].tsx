@@ -19,6 +19,7 @@ const CaseItem = () => {
         description={currentItem?.description}
       >
         <Case
+          results={currentItem?.results ? currentItem?.results : [""]}
           title={currentItem?.title ? currentItem.title : ""}
           description={currentItem?.description ? currentItem.description : ""}
           imageUrl={currentItem?.imageUrl ? currentItem.imageUrl : ""}
