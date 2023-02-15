@@ -9,12 +9,16 @@ interface IServiceTemplate {
   title: string;
   description: string;
   label: string;
+  mainContent: string;
+  programProducts: string[];
 }
 
 export const ServiceTemplate: FC<IServiceTemplate> = ({
   label,
   title,
   description,
+  mainContent,
+  programProducts,
 }) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   return (
@@ -33,7 +37,15 @@ export const ServiceTemplate: FC<IServiceTemplate> = ({
                 <Link href="/">На главную</Link>
               </div>
               <h1>{title}</h1>
+              <div className={styles.programProducts}>
+                <h3>Программные продукты</h3>
+                {programProducts.map((product) => (
+                  <p key={product}>- {product}</p>
+                ))}
+              </div>
+
               <p>{description}</p>
+              <p className={styles.mainContent}>{mainContent}</p>
               <button
                 onClick={() => {
                   setIsOpenPopup(true);
@@ -41,16 +53,6 @@ export const ServiceTemplate: FC<IServiceTemplate> = ({
               >
                 Обсудить проект
               </button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className={styles.serviceAction}
-            >
-              <h2>Расскажите о вашем проекте</h2>
-              <p>И мы подберем для вас лучшее решение!</p>
-              <button>Скачать бриф на разработку проекта</button>
             </motion.div>
           </div>
         </div>

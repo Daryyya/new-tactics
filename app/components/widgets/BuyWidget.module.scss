@@ -1,0 +1,82 @@
+@import "../../assets/styles/variables";
+
+.buy {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #280e42;
+  .buyBody {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .buyTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+
+    h3 {
+      font-size: 29px;
+      line-height: 35px;
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: opacity 0.2s ease;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .action {
+    display: flex;
+
+    form {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        background: $yellow;
+        padding: 16px;
+        border-radius: 9px;
+        transition: opacity 0.2s ease;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+    .inputBlock {
+      border: 1px solid #6f29e1;
+      border-radius: 5px;
+      padding: 12px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 427px;
+      label {
+        font-size: 16px;
+        line-height: 19px;
+        font-family: "Unbounded", cursive;
+        font-weight: 500;
+      }
+      input {
+        background: none;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 15px;
+        line-height: 18px;
+        width: 100%;
+        &::placeholder {
+          color: #b4b4b4;
+        }
+      }
+    }
+  }
+}

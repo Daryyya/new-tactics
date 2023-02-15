@@ -52,6 +52,24 @@ export const Clients: FC = () => {
               <h3>Правиительство г.Москва</h3>
             </div>
           </div>
+          <div className={styles.clientsItem}>
+            <Image src={clientsThird} alt="клиент" />
+            <div>
+              <h3>Правиительство г.Москва</h3>
+            </div>
+          </div>
+          <div className={styles.clientsItem}>
+            <Image src={clientsThird} alt="клиент" />
+            <div>
+              <h3>Правиительство г.Москва</h3>
+            </div>
+          </div>
+          <div className={styles.clientsItem}>
+            <Image src={clientsThird} alt="клиент" />
+            <div>
+              <h3>Правиительство г.Москва</h3>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

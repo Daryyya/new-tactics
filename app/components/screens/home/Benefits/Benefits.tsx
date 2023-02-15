@@ -36,12 +36,6 @@ const Benefits: FC = () => {
                 <h3>Лицензирование и патентование ПО</h3>
               </div>
             </div>
-            <p>
-              We don&apos;t just help with your IT needs. We focus on the entire
-              ecosystem surrounding it. Bringing together people, process, and
-              technology, we pride ourselves on delivering solutions that work
-              in reality. Not theory.
-            </p>
           </div>
         </div>
       </div>

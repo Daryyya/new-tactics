@@ -6,14 +6,15 @@
   .clientsBody {
     display: flex;
     justify-content: space-between;
-    background: #1a172d;
-    padding: 75px 66px;
+    gap: 40px;
     margin-top: 50px;
+    flex-wrap: wrap;
 
     .clientsItem {
       display: flex;
       align-items: center;
       gap: 30px;
+      flex-shrink: 0;
 
       h3 {
         color: $yellow;

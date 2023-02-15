@@ -49,8 +49,13 @@
         margin-bottom: 30px;
       }
 
+      h4 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
       p {
-        @include adaptiv-value("font-size", 23, 18, 0);
+        @include adaptiv-value("font-size", 19, 16, 0);
         line-height: 27px;
         max-width: 643px;
         color: #c4c4c4;

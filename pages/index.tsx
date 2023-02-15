@@ -10,6 +10,7 @@ import Purpose from "@/components/screens/home/Purpose/Purpose";
 import { Reviews } from "@/components/screens/home/Reviews/Reviews";
 import Services from "@/components/screens/home/Services/Services";
 import { Team } from "@/components/screens/home/Team/Team";
+import { BuyWidget } from "@/components/widgets/BuyWidget";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Awards />
         <Clients />
         <Reviews />
+        <BuyWidget />
       </Layout>
     </>
   );

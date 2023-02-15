@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { Case } from "@/components/screens/case/Case/Case";
 import { casesData } from "@/utils/cases.data";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 
