@@ -2,7 +2,6 @@ import { FC } from "react";
 
 import styles from "./Cases.module.scss";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { ICasesData } from "@/utils/cases.data";
 import { useRouter } from "next/router";
 
