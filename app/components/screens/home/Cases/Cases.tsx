@@ -29,7 +29,8 @@ const Cases: FC = () => {
               key={item.id}
               id={item.id}
               title={item.title}
-              description={item.description}
+              results={item.results}
+              stats={item.stats}
               imageUrl={item.imageUrl}
             />
           ))}

@@ -1,5 +1,4 @@
 import { ICasesData } from "@/utils/cases.data";
-import Image from "next/image";
 import { FC } from "react";
 import styles from "./Case.module.scss";
 

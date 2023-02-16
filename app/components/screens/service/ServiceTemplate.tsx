@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 interface IServiceTemplate {
   title: string;
-  description: string;
+  advertises: string[];
   label: string;
   mainContent: string;
 }
@@ -15,7 +15,7 @@ interface IServiceTemplate {
 export const ServiceTemplate: FC<IServiceTemplate> = ({
   label,
   title,
-  description,
+  advertises,
   mainContent,
 }) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
@@ -36,7 +36,9 @@ export const ServiceTemplate: FC<IServiceTemplate> = ({
               </div>
               <h1>{title}</h1>
 
-              <p>{description}</p>
+              {advertises.map((advertise) => (
+                <p key={advertise}>- {advertise}</p>
+              ))}
               <p className={styles.mainContent}>{mainContent}</p>
               <button
                 onClick={() => {

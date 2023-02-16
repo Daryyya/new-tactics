@@ -16,11 +16,11 @@
     }
     .casesItem {
       background: #1a172d;
-      padding: 80px 57px;
-      // @include adaptiv-value("padding-top", 80, 40, 0);
-      // @include adaptiv-value("padding-bottom", 80, 40, 0);
-      // @include adaptiv-value("padding-left", 57, 25, 0);
-      // @include adaptiv-value("padding-right", 57, 25, 0);
+      // padding: 80px 57px;
+      @include adaptiv-value("padding-top", 80, 40, 0);
+      @include adaptiv-value("padding-bottom", 80, 40, 0);
+      @include adaptiv-value("padding-left", 57, 25, 0);
+      @include adaptiv-value("padding-right", 57, 25, 0);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -62,16 +62,33 @@
         margin-bottom: 20px;
       }
 
-      p {
+      .results {
         flex: 1;
-        font-size: 22px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .stats {
+        display: flex;
+        p {
+          font-size: 35px;
+          margin-right: 20px;
+          flex: 1;
+          font-weight: 600;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        margin-right: 20px;
         line-height: 143.4%;
-        max-width: 517px;
+        flex: 1;
+
         color: black;
         font-weight: 500;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        margin-bottom: 2px;
       }
 
       button {

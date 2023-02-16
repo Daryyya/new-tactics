@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 import { ICasesData } from "@/utils/cases.data";
 import { useRouter } from "next/router";
 
-const CasesItem: FC<Omit<ICasesData, "results">> = ({
+const CasesItem: FC<Omit<ICasesData, "description">> = ({
   id,
+  results,
   title,
-  description,
   imageUrl,
+  stats,
 }) => {
   const router = useRouter();
 
@@ -24,8 +25,16 @@ const CasesItem: FC<Omit<ICasesData, "results">> = ({
       <img src={imageUrl} alt="кейс" />
       <div className={styles.hoverBlock}>
         <h3>{title}</h3>
-        <p>{description}</p>
-        <button>Перейти к проекту</button>
+        <div className={styles.results}>
+          {results.map((result) => (
+            <p key={result}>{result}</p>
+          ))}
+        </div>
+        <div className={styles.stats}>
+          {stats.map((stat) => (
+            <p key={stat}>{stat}</p>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
