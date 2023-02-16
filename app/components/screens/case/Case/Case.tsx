@@ -5,7 +5,7 @@ import styles from "./Case.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export const Case: FC<Omit<ICasesData, "id">> = ({
+export const Case: FC<Omit<ICasesData, "id" | "stats">> = ({
   title,
   description,
   imageUrl,
