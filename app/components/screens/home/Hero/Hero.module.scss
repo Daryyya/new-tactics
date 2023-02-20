@@ -17,12 +17,12 @@
     }
 
     .title {
-      @include adaptiv-value("font-size", 58, 33, 0);
+      @include adaptiv-value("font-size", 58, 24, 0);
       line-height: 128%;
       @include adaptiv-value("margin-bottom", 29, 15, 0);
     }
     .text {
-      @include adaptiv-value("font-size", 34, 25, 0);
+      @include adaptiv-value("font-size", 34, 13, 0);
       line-height: 111.9%;
       @include adaptiv-value("margin-bottom", 40, 20, 0);
       @media (max-width: 992px) {
@@ -30,11 +30,14 @@
       }
     }
     .button {
-      font-size: 16px;
+      @include adaptiv-value("font-size", 16, 11, 0);
       line-height: 19px;
       background: #000;
       background: $yellow;
-      padding: 12px 36px;
+      @include adaptiv-value("padding-top", 12, 8, 0);
+      @include adaptiv-value("padding-bottom", 12, 8, 0);
+      @include adaptiv-value("padding-right", 36, 10, 0);
+      @include adaptiv-value("padding-left", 36, 10, 0);
       border-radius: 3px;
       transition: all 0.2s ease;
 

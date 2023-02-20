@@ -6,7 +6,14 @@
   .caseBody {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+
+    img {
+      @media (max-width: 500px) {
+        max-width: 300px;
+      }
+    }
 
     .info {
       display: flex;
@@ -14,9 +21,9 @@
       @include adaptiv-value("gap", 20, 15, 0);
 
       h1 {
-        @include adaptiv-value("font-size", 42, 33, 0);
+        @include adaptiv-value("font-size", 42, 24, 0);
         max-width: 600px;
-        @include adaptiv-value("line-height", 52, 43, 0);
+        @include adaptiv-value("line-height", 52, 36, 0);
       }
       p {
         @include adaptiv-value("font-size", 18, 14, 0);

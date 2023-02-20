@@ -10,15 +10,15 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 21px;
-    @media (max-width: 1300px) {
+    @media (max-width: 992px) {
       flex-direction: column;
       align-items: center;
+      gap: 120px;
     }
     .casesItem {
       background: #1a172d;
-      // padding: 80px 57px;
-      @include adaptiv-value("padding-top", 80, 40, 0);
-      @include adaptiv-value("padding-bottom", 80, 40, 0);
+      @include adaptiv-value("padding-top", 80, 30, 0);
+      @include adaptiv-value("padding-bottom", 80, 30, 0);
       @include adaptiv-value("padding-left", 57, 25, 0);
       @include adaptiv-value("padding-right", 57, 25, 0);
       display: flex;
@@ -34,9 +34,20 @@
           transform: scale(1);
         }
       }
+      @media (max-width: 992px) {
+        background: none;
+        padding: 0 !important;
+        min-width: 100% !important;
+        flex-direction: column;
+        align-items: center;
+      }
 
       img {
         object-fit: cover;
+        @media (max-width: 992px) {
+          max-height: 281px;
+          width: 300px;
+        }
       }
     }
     .hoverBlock {
@@ -53,13 +64,25 @@
       padding: 42px 35px;
       display: flex;
       flex-direction: column;
+      @media (max-width: 992px) {
+        background: none;
+        position: relative;
+        opacity: 1;
+        transform: scale(1);
+        padding: 0 !important;
+        margin-top: 15px;
+      }
 
       h3 {
-        @include adaptiv-value("font-size", 45, 30, 0);
-        line-height: 57px;
+        @include adaptiv-value("font-size", 45, 24, 0);
+        @include adaptiv-value("line-height", 57, 36, 0);
         color: black;
         align-items: flex-start;
         margin-bottom: 20px;
+        @media (max-width: 992px) {
+          text-align: center;
+          color: white;
+        }
       }
 
       .results {
@@ -68,10 +91,16 @@
         justify-content: space-evenly;
         align-items: flex-start;
         margin-bottom: 15px;
+        @media (max-width: 992px) {
+          display: none;
+        }
       }
 
       .stats {
         display: flex;
+        @media (max-width: 992px) {
+          display: none;
+        }
         p {
           font-size: 35px;
           margin-right: 20px;
@@ -85,10 +114,12 @@
         margin-right: 20px;
         line-height: 143.4%;
         flex: 1;
-
         color: black;
         font-weight: 500;
         margin-bottom: 2px;
+        @media (max-width: 992px) {
+          color: white;
+        }
       }
 
       button {

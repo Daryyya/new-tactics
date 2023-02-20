@@ -12,12 +12,12 @@ const Purpose: FC = () => {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "90%" }}
-            transition={{ duration: 1.2 }}
+            transition={{ duration: 2 }}
           />
           <motion.h2
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
           >
             <span>04 |</span> Цель
           </motion.h2>

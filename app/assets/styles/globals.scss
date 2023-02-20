@@ -25,6 +25,7 @@ a {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 a {
@@ -37,7 +38,7 @@ body {
   color: white;
   font-size: 16px;
   line-height: 157.52%;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 ul {

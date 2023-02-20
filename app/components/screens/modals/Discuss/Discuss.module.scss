@@ -1,4 +1,5 @@
 @import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
 
 .discuss {
   position: fixed;
@@ -11,12 +12,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 20;
+  z-index: 22;
 
   .content {
     background: #1a172d;
     border-radius: 5px;
     padding: 41px 100px;
+    @include adaptiv-value("padding-top", 41, 40, 0);
+    @include adaptiv-value("padding-bottom", 41, 20, 0);
+    @include adaptiv-value("padding-left", 100, 20, 0);
+    @include adaptiv-value("padding-right", 100, 20, 0);
     position: relative;
 
     .closeBtn {
@@ -25,14 +30,19 @@
       right: 37px;
       cursor: pointer;
       transition: opacity 0.2s ease;
+      @media (max-width: 992px) {
+        top: 10px;
+        right: 10px;
+      }
       &:hover {
         opacity: 0.5;
       }
     }
 
     h2 {
-      font-size: 25px;
-      line-height: 54px;
+      @include adaptiv-value("font-size", 25, 15, 0);
+      @include adaptiv-value("line-height", 54, 22, 0);
+      text-align: center;
       margin-bottom: 26px;
     }
   }

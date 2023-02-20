@@ -1,4 +1,5 @@
 @import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
 
 .buy {
   position: fixed;
@@ -18,8 +19,8 @@
     margin-bottom: 35px;
 
     h3 {
-      font-size: 29px;
-      line-height: 35px;
+      @include adaptiv-value("font-size", 29, 15, 0);
+      @include adaptiv-value("line-height", 35, 25, 0);
     }
 
     button {
@@ -35,10 +36,12 @@
 
   .action {
     display: flex;
+    flex-wrap: wrap;
 
     form {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 20px;
 
       button {
@@ -59,6 +62,7 @@
       flex-direction: column;
       gap: 5px;
       width: 427px;
+      @include adaptiv-value("width", 427, 290, 0);
       label {
         font-size: 16px;
         line-height: 19px;

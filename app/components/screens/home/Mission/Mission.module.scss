@@ -41,21 +41,23 @@
       align-self: flex-end;
       @media (max-width: 935px) {
         align-self: flex-start;
+        width: 100%;
       }
     }
 
     .director {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      @include adaptiv-value("gap", 15, 8, 0);
 
       h3 {
         color: $yellow;
       }
 
       p {
+        @include adaptiv-value("font-size", 20, 15, 0);
+        @include adaptiv-value("line-height", 24, 19, 0);
         max-width: 290px;
-        font-size: 20px;
         line-height: 24px;
         color: #c6c6c6;
       }

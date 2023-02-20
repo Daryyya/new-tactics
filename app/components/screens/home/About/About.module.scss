@@ -1,4 +1,5 @@
 @import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
 
 .about {
   padding-top: 70px;
@@ -11,20 +12,27 @@
     justify-content: center;
     margin: 0 auto;
     margin-top: 100px;
+    @include adaptiv-value("row-gap", 100, 50, 0);
+    @media (max-width: 992px) {
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     .aboutItem {
       display: flex;
       align-items: center;
-      gap: 32px;
+      @include adaptiv-value("gap", 32, 15, 0);
 
       h3 {
-        font-size: 72px;
-        line-height: 80px;
+        @include adaptiv-value("font-size", 72, 40, 0);
+        @include adaptiv-value("line-height", 80, 48, 0);
         color: $yellow;
       }
 
       p {
         max-width: 288px;
+        @include adaptiv-value("font-size", 16, 13, 0);
       }
     }
   }

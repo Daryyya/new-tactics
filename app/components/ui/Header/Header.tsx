@@ -10,7 +10,7 @@ const Header: FC = () => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
 
   useEffect(() => {
-    if (isOpenMenu) {
+    if (isOpenMenu && window.innerWidth < 992) {
       document.body.style.overflowY = "hidden";
     } else {
       document.body.style.overflowY = "auto";
@@ -24,11 +24,7 @@ const Header: FC = () => {
             <Link href="/" className={styles.logo}>
               <Image src={logo} alt="program tactics" />
             </Link>
-            <nav
-              style={{
-                transform: `${isOpenMenu ? "translateY(0)" : ""}`,
-              }}
-            >
+            <nav className={isOpenMenu ? `${styles.active}` : ""}>
               <ul className={styles.menuList}>
                 {menuData.map((item) => (
                   <li key={item.href}>

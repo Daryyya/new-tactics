@@ -1,3 +1,4 @@
+@import "../../../../assets/styles/mixins";
 .reviews {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -6,17 +7,34 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
 
     .review {
       background: #1a172d;
+      @include adaptiv-value("padding-right", 88, 15, 0);
+      @include adaptiv-value("padding-left", 44, 15, 0);
+      @include adaptiv-value("padding-top", 44, 15, 0);
+      @include adaptiv-value("padding-bottom", 44, 15, 0);
       padding-right: 88px;
       padding-left: 44px;
       padding-top: 44px;
       padding-bottom: 44px;
 
+      .image {
+        @media (max-width: 450px) {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+        }
+      }
+
       .reviewTop {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
         align-items: center;
         margin-bottom: 15px;
 
@@ -25,8 +43,8 @@
           align-items: center;
           gap: 16px;
           h4 {
-            font-size: 24px;
-            line-height: 29px;
+            @include adaptiv-value("font-size", 24, 17, 0);
+            @include adaptiv-value("line-height", 29, 22, 0);
             max-width: 172px;
           }
         }
@@ -37,12 +55,15 @@
           color: white;
           border: none;
           align-items: flex-end;
+          @media (max-width: 600px) {
+            align-items: flex-start;
+          }
         }
       }
 
       .reviewsContent {
         p {
-          font-size: 22px;
+          @include adaptiv-value("font-size", 22, 14, 0);
           line-height: 143.4%;
           max-width: 517px;
         }

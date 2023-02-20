@@ -1,4 +1,5 @@
 @import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
 
 .awards {
   padding-top: 70px;
@@ -14,13 +15,16 @@
   .awardsItem {
     max-width: 473px;
     .image {
-      margin-bottom: 20px;
+      @include adaptiv-value("margin-bottom", 20, 10, 0);
+      @media (max-width: 510px) {
+        width: 100%;
+      }
     }
 
     h3 {
-      font-size: 36px;
-      line-height: 43px;
-      margin-bottom: 30px;
+      @include adaptiv-value("font-size", 36, 22, 0);
+      @include adaptiv-value("line-height", 43, 29, 0);
+      @include adaptiv-value("margin-bottom", 30, 15, 0);
     }
 
     p {
@@ -28,16 +32,19 @@
       line-height: 157.52%;
       font-weight: 500;
       color: #c6c6c6;
-      margin-bottom: 30px;
+      @include adaptiv-value("margin-bottom", 30, 15, 0);
     }
 
     button {
       background: #ead1a6;
       border-radius: 16px;
-      padding: 14px 39px;
+      @include adaptiv-value("padding-top", 14, 10, 0);
+      @include adaptiv-value("padding-bottom", 14, 10, 0);
+      @include adaptiv-value("padding-left", 39, 25, 0);
+      @include adaptiv-value("padding-right", 39, 25, 0);
       text-transform: uppercase;
-      font-size: 22px;
-      line-height: 26px;
+      @include adaptiv-value("font-size", 22, 15, 0);
+      @include adaptiv-value("line-height", 26, 19, 0);
       transition: all 0.2s ease;
       &:hover {
         color: white;

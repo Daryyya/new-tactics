@@ -16,6 +16,7 @@
     @include adaptiv-value("margin-bottom", 25, 15, 0);
     h2 {
       @include adaptiv-value("font-size", 49, 25, 0);
+      @include adaptiv-value("line-height", 59, 35, 0);
     }
   }
 
@@ -24,11 +25,17 @@
     padding-left: 95px;
     align-items: center;
     gap: 26px;
+    @media (max-width: 992px) {
+      padding-left: 0;
+    }
 
     .paragraphLine {
       height: 79px;
       width: 1px;
       background: $yellow;
+      @media (max-width: 992px) {
+        display: none;
+      }
     }
 
     p {
@@ -52,11 +59,11 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: 70px;
-    gap: 25px;
+    @include adaptiv-value("gap", 25, 10, 0);
 
     p {
-      font-size: 24px;
-      line-height: 28px;
+      @include adaptiv-value("font-size", 24, 15, 0);
+      @include adaptiv-value("line-height", 28, 23, 0);
       color: #c6c6c6;
       max-width: 643px;
     }

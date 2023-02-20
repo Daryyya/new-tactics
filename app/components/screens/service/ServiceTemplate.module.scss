@@ -1,14 +1,16 @@
 @import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
 
 .service {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  @include adaptiv-value("padding-top", 100, 50, 0);
+  @include adaptiv-value("padding-bottom", 100, 50, 0);
   .serviceBody {
     .serviceInfo {
       .serviceInfoLabel {
         display: flex;
         align-items: center;
-        gap: 21px;
+        flex-wrap: wrap;
+        @include adaptiv-value("gap", 21, 10, 0);
         margin-bottom: 24px;
 
         p {
@@ -32,13 +34,13 @@
       }
 
       h1 {
-        font-size: 60px;
-        line-height: 71px;
+        @include adaptiv-value("font-size", 60, 24, 0);
+        @include adaptiv-value("line-height", 71, 35, 0);
         text-transform: uppercase;
         margin-bottom: 27px;
       }
       p {
-        font-size: 20px;
+        @include adaptiv-value("font-size", 20, 15, 0);
         line-height: 161.52%;
         color: #c6c6c6;
         margin-bottom: 15px;
@@ -49,7 +51,7 @@
         text-align: center;
         background: $yellow;
         color: black;
-        font-size: 20px;
+        @include adaptiv-value("font-size", 20, 15, 0);
         padding-top: 15px;
         padding-bottom: 15px;
         border-radius: 3px;

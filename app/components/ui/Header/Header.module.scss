@@ -14,15 +14,22 @@
         top: 0;
         right: 0;
         background: $lighterBg;
-        width: 60vw;
+        width: 80vw;
+        text-align: right;
         height: 100vh;
         z-index: 20;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transform: translateX(100%);
         transition: all 0.2s ease;
+        padding-right: 10px;
+        opacity: 0;
+        visibility: hidden;
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
 
@@ -85,6 +92,9 @@
         &:hover {
           background: $yellowHover;
           color: white;
+        }
+        @media (max-width: 410px) {
+          display: none;
         }
       }
     }

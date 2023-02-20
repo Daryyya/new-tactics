@@ -12,8 +12,8 @@
     gap: 20px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 55px;
+    @include adaptiv-value("margin-bottom", 55, 35, 0);
+    margin-top: 55px;
 
     h4 {
       letter-spacing: 0.05em;
@@ -36,35 +36,42 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    @media (max-width: 992px) {
+      justify-content: flex-start;
+    }
 
     .servicesImage {
-      @include adaptiv-value("width", 550, 350, 0);
+      @include adaptiv-value("width", 550, 220, 0);
+      object-fit: cover;
+      @media (max-width: 992px) {
+        display: none;
+      }
     }
 
     .info {
       h2 {
-        @include adaptiv-value("font-size", 51, 33, 0);
+        @include adaptiv-value("font-size", 51, 24, 0);
         @include adaptiv-value("line-height", 61, 43, 0);
         max-width: 640px;
-        margin-bottom: 30px;
+        @include adaptiv-value("margin-bottom", 30, 10, 0);
       }
 
       h4 {
-        margin-bottom: 10px;
+        @include adaptiv-value("margin-bottom", 10, 6, 0);
         font-size: 20px;
       }
 
       p {
-        @include adaptiv-value("font-size", 19, 16, 0);
+        @include adaptiv-value("font-size", 19, 14, 0);
         line-height: 27px;
         max-width: 643px;
         color: #c4c4c4;
-        margin-bottom: 33px;
+        @include adaptiv-value("margin-bottom", 33, 20, 0);
       }
 
       a {
         text-transform: uppercase;
-        font-size: 22px;
+        @include adaptiv-value("font-size", 22, 14, 0);
         line-height: 26px;
         padding: 14px 39px;
         background: $yellow;
