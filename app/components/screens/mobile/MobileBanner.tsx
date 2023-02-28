@@ -23,10 +23,10 @@ const MobileBanner: FC = () => {
                 Скачать бриф на разработку проекта
               </button>
               <div className={styles.icons}>
-                <Link href="/">
+                <Link target="_blank" href="https://wa.me/79166974227">
                   <Image src={whatsappSvg} alt="whatsapp" />
                 </Link>
-                <Link href="/">
+                <Link target="_blank" href="https://telegram.me/PROT_labs">
                   <Image src={telegramSvg} alt="telegram" />
                 </Link>
               </div>
