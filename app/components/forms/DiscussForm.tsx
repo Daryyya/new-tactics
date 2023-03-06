@@ -4,6 +4,7 @@ import styles from "./DiscussForm.module.scss";
 import { useForm } from "react-hook-form";
 
 import { IDiscussParams } from "@/types/discuss";
+import { useRouter } from "next/router";
 
 export const DiscussForm: FC = () => {
   const {
@@ -12,8 +13,11 @@ export const DiscussForm: FC = () => {
     formState: { errors },
   } = useForm<IDiscussParams>();
 
+  const router = useRouter();
+
   const onSubmit = (data: IDiscussParams) => {
     console.log(data);
+    router.push("/thanks");
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -65,7 +69,7 @@ export const DiscussForm: FC = () => {
         >
           {errors.message
             ? errors.message?.message + "*"
-            : "Опишите вам проект"}
+            : "Опишите ваш проект"}
         </label>
         <textarea
           {...register("message", {
