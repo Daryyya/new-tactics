@@ -6,8 +6,8 @@ import {
   ministerImg,
   securitySvg,
   telegramSvg,
-  vkSvg,
 } from "@/assets/images/home";
+import { whatsappSvg } from "@/assets/images/shared";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
@@ -60,12 +60,12 @@ export const Footer: FC = () => {
               </div>
             </div>
             <div className={styles.social}>
-              <div>
-                <Image src={vkSvg} alt="Вконтакте" />
-              </div>
-              <div>
-                <Image src={telegramSvg} alt="Телеграм" />
-              </div>
+              <Link className={styles.socialLink} target="_blank" href="https://telegram.me/PROT_labs">
+                <Image src={telegramSvg} alt="Вконтакте" />
+              </Link>
+              <Link className={styles.socialLink} target="_blank" href="https://wa.me/79166974227">
+                <Image src={whatsappSvg} alt="Телеграм" />
+              </Link>
             </div>
           </div>
           <div className={styles.map}>
@@ -84,12 +84,12 @@ export const Footer: FC = () => {
             <Image src={securitySvg} alt="министерство" />
             <div>
               <p>Надёжный предпринематель</p>
-              <Link href="/">По версии Tenchat</Link>
+              <Link target="_blank"  href="https://tenchat.ru/Saltanyuk?utm_source=d445e866-122e-48f0-9648-9df93c6a8f17">По версии Tenchat</Link>
             </div>
           </div>
         </div>
         <p className={styles.copyright}>
-          © 2022. PROT Labs. Все права защищены. ИП Салтанюк Никита Андреевич .
+        2023. Коммерческое наименование "Program Tactics". (ИП Салтанюк Никита Андреевич). Все права защищены. Материалы, представлены и размещены на данном сайте с разрешения правообладателей интеллектуальной собственности и компаний, являющихся действующими клиентами ИП Салтанюк Н.А. 
         </p>
       </div>
     </footer>

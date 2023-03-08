@@ -1,7 +1,9 @@
 import { sendMail } from "@/services/email";
-import React, { useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { useForm } from "react-hook-form";
 import Loader from "@/components/ui/Loader/Loader";
+
+import Link from 'next/link'
 
 import styles from "./ThanksForm.module.scss";
 import Success from "@/components/ui/Success/Success";
@@ -54,7 +56,12 @@ const ThanksForm = () => {
   }
 
   if(isError) {
-    return <div className={styles.errorScreen}>Произошла непредвиденная ошибка</div>
+    return (
+    <> 
+    <div className={styles.errorScreen}>Произошла непредвиденная ошибка</div>
+    <Link href="/">Вернуться на главную</Link>
+    </>  
+     )
   }
 
   return (
