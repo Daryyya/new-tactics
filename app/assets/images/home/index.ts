@@ -32,6 +32,9 @@ import securitySvg from "./security.svg";
 import developmentSvg from "./development.svg";
 import optimizationSvg from "./optimization.svg";
 import supportImg from "./support-img.png";
+import teamFirst from './team-1.png'
+import teamSecond from './team-2.png'
+import teamThird from './team-3.png'
 
 export {
   logo,
@@ -68,4 +71,7 @@ export {
   developmentSvg,
   optimizationSvg,
   supportImg,
+  teamFirst,
+  teamSecond,
+  teamThird
 };

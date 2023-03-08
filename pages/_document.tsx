@@ -29,8 +29,28 @@ export default function Document() {
         accurateTrackBounce:true,
         webvisor:true
    });
-              `,
+   if (document.readyState !== 'loading') {
+    us_sendMerticsByClickOnExternalLink();
+  } else {
+    document.addEventListener('DOMContentLoaded', us_sendMerticsByClickOnExternalLink);
+  }
+
+  function us_sendMerticsByClickOnExternalLink() {
+    var links = document.querySelectorAll('[href="https://wa.me/79789543321"]');
+    Array.prototype.forEach.call(links, function (link) {
+      link.addEventListener('click', function () {
+        var url = link.getAttribute('href');
+        if (window.mainMetrikaId !== undefined) {
+          yaCounter87782249.reachGoal('WA');
+        }
+        if (url && url.indexOf('http://') !== -1) {
+          setTimeout(function () {
+            window.location.href = url;
+          }, 500);
+        }
+      }); `,
           }}
+          
         />
         <noscript>
           <div>

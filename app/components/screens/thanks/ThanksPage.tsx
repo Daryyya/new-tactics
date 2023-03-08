@@ -7,10 +7,6 @@ const ThanksPage = () => {
   return (
     <section className={styles.thanks}>
       <div className="container">
-        <h1 className={styles.title}>
-          Спасибо за заявку, <br />
-          Обязательно заполните форму ниже
-        </h1>
         <ThanksForm />
       </div>
     </section>

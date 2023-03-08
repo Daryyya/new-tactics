@@ -15,7 +15,7 @@ import { BuyWidget } from "@/components/widgets/BuyWidget";
 export default function Home() {
   return (
     <>
-      <Layout title="Home" description="description" keywords={["Корпорация"]}>
+      <Layout title="Program tactics" description="Корпоативные системы на заказ" keywords={["Корпоративные системы", "Разработка", "Дизайн", "Поддержка"]}>
         <Hero />
         <Benefits />
         <Services />
