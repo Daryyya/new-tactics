@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -8,7 +8,7 @@ import { success } from '@/assets/images/widgets'
 const Success = () => {
   const blockRef = useRef<any>()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     blockRef.current.scrollIntoView()
   }, [])
 
@@ -17,7 +17,7 @@ const Success = () => {
     <div ref={blockRef} className={styles.success}>
         <Image src={success} alt="успех" ></Image>
         <h1>Заявка отправлена успешно!!!</h1>
-        <Link href="/" >Вернуться на главную</Link>
+        <Link className={styles.homeLink} href="/" >Вернуться на главную</Link>
     </div>
     </>
     

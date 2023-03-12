@@ -1,5 +1,5 @@
 import { sendMail } from "@/services/email";
-import { useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Loader from "@/components/ui/Loader/Loader";
 
@@ -41,7 +41,7 @@ const ThanksForm = () => {
     )
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if(errors.phone || errors.name || errors.clientsCount || errors.contactPreference || errors.sphere || errors.wishes) {
       errorInputRef.current.scrollIntoView()
     }
@@ -59,7 +59,7 @@ const ThanksForm = () => {
     return (
     <> 
     <div className={styles.errorScreen}>Произошла непредвиденная ошибка</div>
-    <Link href="/">Вернуться на главную</Link>
+    <Link className={styles.homeLink} href="/">Вернуться на главную</Link>
     </>  
      )
   }

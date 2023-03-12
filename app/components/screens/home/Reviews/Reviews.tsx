@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import styles from "./Reviews.module.scss";
-import Image from "next/image";
-import { reviewImage, yandexLogo } from "@/assets/images/home";
+import { reviews } from "@/utils/reviews.data";
+import ReviewsItem from "./ReviewsItem";
 
 export const Reviews: FC = () => {
   return (
@@ -23,60 +23,7 @@ export const Reviews: FC = () => {
           </motion.h2>
         </div>
         <div className={styles.reviewsBody}>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.review}
-          >
-            <div className={styles.reviewTop}>
-              <div className={styles.reviewer}>
-                <Image
-                  className={styles.image}
-                  src={reviewImage}
-                  alt="клиент"
-                />
-                <h4>Светлана Смирнова</h4>
-              </div>
-              <button>
-                <span>Смотреть отзыв</span>
-                <Image src={yandexLogo} alt="Яндекс" />
-              </button>
-            </div>
-            <div className={styles.reviewsContent}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className={styles.review}
-          >
-            <div className={styles.reviewTop}>
-              <div className={styles.reviewer}>
-                <Image
-                  className={styles.image}
-                  src={reviewImage}
-                  alt="клиент"
-                />
-                <h4>Светлана Смирнова</h4>
-              </div>
-              <button>
-                <span>Смотреть отзыв</span>
-                <Image src={yandexLogo} alt="Яндекс" />
-              </button>
-            </div>
-            <div className={styles.reviewsContent}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-            </div>
-          </motion.div>
+        {reviews.map(item => <ReviewsItem key={item.name} text={item.text} name={item.name} />)}
         </div>
       </div>
     </section>

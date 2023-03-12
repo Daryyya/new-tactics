@@ -10,10 +10,10 @@ export default function Document() {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Unbounded:wght@400;500&display=swap"
         rel="stylesheet"
       />
-
       <body>
         <Main />
         <NextScript />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -48,9 +48,9 @@ export default function Document() {
             window.location.href = url;
           }, 500);
         }
-      }); `,
+      })
+      })}; `,
           }}
-          
         />
         <noscript>
           <div>
@@ -61,6 +61,7 @@ export default function Document() {
             />
           </div>
         </noscript>
+  
       </body>
     </Html>
   );

@@ -1,6 +1,28 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
 .success {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    h1 {
+        text-align: center;
+        @include adaptiv-value("font-size", 44, 24, 0);
+        margin-bottom: 20px;
+    }
+}
+
+.homeLink {
+    margin-top: 20px;
+    background: $yellow;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 6px;
+    transition: all .2s ease;
+    &:hover {
+        background: $yellowHover;
+        color: white;
+    }
 }

@@ -35,6 +35,7 @@ import supportImg from "./support-img.png";
 import teamFirst from './team-1.png'
 import teamSecond from './team-2.png'
 import teamThird from './team-3.png'
+import reviewPlaceholder from './review-placeholder.png';
 
 export {
   logo,
@@ -73,5 +74,6 @@ export {
   supportImg,
   teamFirst,
   teamSecond,
-  teamThird
+  teamThird,
+  reviewPlaceholder
 };

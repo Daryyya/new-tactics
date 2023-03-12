@@ -49,14 +49,14 @@ export const Footer: FC = () => {
                   <Image src={locationSvg} alt="локация" />
                   <p>г. Оренбург, ул. Чкалова 3/1</p>
                 </div>
-                <div className={styles.block}>
+                <Link href="tel:+79166974227" className={styles.block}>
                   <Image src={footerPhoneSvg} alt="телефон" />
                   <p>+7 (916) 697 42 27</p>
-                </div>
-                <div className={styles.block}>
+                </Link>
+                <Link href="mailto:pm@protactics.ru" className={styles.block}>
                   <Image src={mailSvg} alt="мэйл" />
                   <p>pm@protactics.ru</p>
-                </div>
+                </Link>
               </div>
             </div>
             <div className={styles.social}>

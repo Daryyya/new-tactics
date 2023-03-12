@@ -30,14 +30,7 @@ export const Awards = () => {
             className={styles.awardsItem}
           >
             <Image className={styles.image} src={award} alt="award" />
-            <h3>Награда за лучшее мобильное приложение 2022</h3>
-            <p>
-              We don&apos;t just help with your IT needs. We focus on the entire
-              ecosystem surrounding it. Bringing together people, process, and
-              technology, we pride ourselves on delivering solutions that work
-              in reality. Not theory.
-            </p>
-            <button>Подробнее</button>
+            <h3>За лидерство в разработке и внедрении отечественного программного обеспечения</h3>
           </motion.div>
         </div>
       </div>
