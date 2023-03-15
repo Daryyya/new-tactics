@@ -1,0 +1,19 @@
+@import "../../../assets/styles/mixins";
+
+.policy {
+  @include adaptiv-value("padding-top", 70, 50, 0);
+  @include adaptiv-value("padding-bottom", 70, 50, 0);
+  h1 {
+    @include adaptiv-value("font-size", 30, 18, 0);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    @include adaptiv-value("font-size", 28, 16, 0);
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+}
