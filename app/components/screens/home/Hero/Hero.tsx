@@ -33,7 +33,8 @@ const Hero: FC = () => {
             <div className={styles.heroInfo}>
               <h1 className={styles.title}>КОРПОРАТИВНЫЕ СИСТЕМЫ</h1>
               <p className={styles.text}>
-                Лидер №1 высоких технологий в сфере импортозамещения 2022 г
+                Лидер №1 в области импортозамещения цифровых платформ и
+                сервисов,автоматизации бизнеса и госуправления
               </p>
               <button
                 onClick={() => setIsOpenPopup(true)}
