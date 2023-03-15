@@ -29,8 +29,6 @@ const ThanksForm = () => {
     formState: { errors },
   } = useForm<IThanksParams>();
 
-  const errorInputRef = useRef<any>();
-
   const onSubmit = (data: any) => {
     setIsLoading(true);
     sendMail({ ...data, clientsCount: radioValue })
@@ -45,19 +43,6 @@ const ThanksForm = () => {
         setIsError(true);
       });
   };
-
-  useEffect(() => {
-    if (
-      errors.phone ||
-      errors.name ||
-      errors.clientsCount ||
-      errors.contactPreference ||
-      errors.sphere ||
-      errors.wishes
-    ) {
-      errorInputRef.current.scrollIntoView();
-    }
-  }, []);
 
   if (isLoading) {
     return <Loader />;
@@ -87,7 +72,7 @@ const ThanksForm = () => {
           Спасибо за заявку, <br />
           Обязательно заполните форму ниже
         </h1>
-        <div ref={errorInputRef} className={styles.inputBlock}>
+        <div className={styles.inputBlock}>
           <label
             className={errors.phone ? `${styles.error}` : ""}
             htmlFor="phone-input"
