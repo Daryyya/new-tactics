@@ -1,22 +1,25 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import styles from "./DiscussForm.module.scss";
 
 import { useForm } from "react-hook-form";
 
 import { IDiscussParams } from "@/types/discuss";
 import { useRouter } from "next/router";
+import { FormContext } from "@/utils/FormCollector/FormContext";
 
 export const DiscussForm: FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IDiscussParams>();
+  } = useForm<IDiscussParams>({ mode: "onChange" });
+
+  const { setForm } = useContext(FormContext);
 
   const router = useRouter();
 
   const onSubmit = (data: IDiscussParams) => {
-    console.log(data);
+    setForm(data);
     router.push("/thanks");
   };
   return (
@@ -64,30 +67,32 @@ export const DiscussForm: FC = () => {
       </div>
       <div className={styles.inputBlock}>
         <label
-          className={errors.message ? `${styles.error}` : ""}
-          htmlFor="message"
+          className={errors.description ? `${styles.error}` : ""}
+          htmlFor="description"
         >
-          {errors.message
-            ? errors.message?.message + "*"
+          {errors.description
+            ? errors.description?.message + "*"
             : "Опишите ваш проект"}
         </label>
         <textarea
-          {...register("message", {
+          {...register("description", {
             required: "Опишите, пожалуйста, ваш проект",
             pattern: {
               value: /[A-Za-zА-Яа-яЁё]{3,}/,
               message: "Некорректное описание",
             },
           })}
-          name="message"
-          id="message"
+          name="description"
+          id="description"
           placeholder="Введите здесь"
-          aria-invalid={errors.message ? true : false}
+          aria-invalid={errors.description ? true : false}
         ></textarea>
       </div>
       <button
         className={styles.submitBtn}
-        disabled={errors.phone || errors.name || errors.message ? true : false}
+        disabled={
+          errors.phone || errors.name || errors.description ? true : false
+        }
         type="submit"
       >
         Отправить

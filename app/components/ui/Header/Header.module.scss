@@ -93,6 +93,11 @@
           background: $yellowHover;
           color: white;
         }
+        &:disabled {
+          background: lightgray;
+          color: #000;
+          cursor: auto;
+        }
         @media (max-width: 410px) {
           display: none;
         }

@@ -1,9 +1,10 @@
 import { logo, phoneSvg } from "@/assets/images/home";
 import Discuss from "@/components/screens/modals/Discuss/Discuss";
+import { FormContext } from "@/utils/FormCollector/FormContext";
 import { menuData } from "@/utils/menu.data";
 import Image from "next/image";
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 const Header: FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -16,6 +17,9 @@ const Header: FC = () => {
       document.body.style.overflowY = "auto";
     }
   }, [isOpenMenu]);
+
+  const { name, phone, description } = useContext(FormContext);
+
   return (
     <>
       <header className={styles.header}>
@@ -45,6 +49,7 @@ const Header: FC = () => {
                 <span>+7 (916) 697 42-27</span>
               </Link>
               <button
+                disabled={name || phone || description ? true : false}
                 onClick={() => setIsOpenPopup(true)}
                 className={styles.button}
               >

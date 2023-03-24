@@ -1,41 +1,55 @@
 import { sendMail } from "@/services/email";
-import { useRef, useState, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Loader from "@/components/ui/Loader/Loader";
 
 import Link from "next/link";
 
 import styles from "./ThanksForm.module.scss";
-import Success from "@/components/ui/Success/Success";
+import { useRouter } from "next/router";
+import { FormContext } from "@/utils/FormCollector/FormContext";
 
 interface IThanksParams {
   phone: string;
   name: string;
-  sphere: string;
   clientsCount: string;
   contactPreference: string;
   wishes: string;
+  product: string;
+  optimization: string;
+  budget: string;
 }
 
 const ThanksForm = () => {
-  const [radioValue, setRadioValue] = useState("1-10");
   const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const { name, description, phone } = useContext(FormContext);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!name || !description || !phone) {
+      router.push("/");
+    }
+  }, []);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IThanksParams>();
+  } = useForm<IThanksParams>({
+    mode: "onSubmit",
+    defaultValues: { name: name, phone: phone, wishes: description },
+  });
 
   const onSubmit = (data: any) => {
     setIsLoading(true);
-    sendMail({ ...data, clientsCount: radioValue })
+    console.log(data);
+    sendMail({ ...data })
       .then((res) => {
         console.log(res.data);
         setIsLoading(false);
-        setIsSuccess(true);
       })
       .catch((err) => {
         console.log(err);
@@ -46,10 +60,6 @@ const ThanksForm = () => {
 
   if (isLoading) {
     return <Loader />;
-  }
-
-  if (isSuccess) {
-    return <Success />;
   }
 
   if (isError) {
@@ -108,25 +118,66 @@ const ThanksForm = () => {
             name="name"
           />
         </div>
-        <div className={styles.inputBlock}>
-          <label
-            className={errors.sphere ? `${styles.error}` : ""}
-            htmlFor="thanks_sphere"
-          >
-            {errors.sphere
-              ? errors.sphere?.message
-              : "Сфера деятельности компании"}
-          </label>
-          <input
-            {...register("sphere", {
-              required: "Укажите сферу деятельности вашей компании",
-            })}
-            id="thanks_sphere"
-            type="phone"
-            placeholder="Введите здесь..."
-            name="sphere"
-          />
-        </div>
+        <fieldset className={styles.radioInputs}>
+          <legend>Что необходимо разработать?</legend>
+          <div className={styles.items}>
+            <div>
+              <input
+                {...register("product")}
+                type="radio"
+                value="Мобильное приложение"
+                id="mobile-app"
+              />
+              <label htmlFor="mobile-app">Мобильное приложение</label>
+            </div>
+            <div>
+              <input
+                {...register("product")}
+                type="radio"
+                value="CRM/EPR система"
+                id="crm"
+              />
+              <label htmlFor="crm">CRM/EPR систему</label>
+            </div>
+            <div>
+              <input
+                {...register("product")}
+                type="radio"
+                value="Мобильное приложение"
+                id="e-commerce-portal"
+              />
+              <label htmlFor="e-commerce-portal">Корпоративный портал</label>
+            </div>
+            <div>
+              <input type="texo />
+            </div>
+          </div>
+        </fieldset>
+        <fieldset className={styles.radioInputs}>
+          <legend>Какие участки учета хотите оптимизировать?</legend>
+          <div className={styles.items}>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                id="automatization"
+                value="Полная автоматизация бизнеса"
+              />
+              <label htmlFor="automatization">
+                Полная автоматизация бизнеса
+              </label>
+            </div>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                value="Управление финансами"
+                id="finance"
+              />
+              <label htmlFor="finance">Управление финансами</label>
+            </div>
+          </div>
+        </fieldset>
         <div className={styles.inputBlock}>
           <label
             className={errors.contactPreference ? `${styles.error}` : ""}
@@ -146,27 +197,60 @@ const ThanksForm = () => {
             name="contactPreference"
           />
         </div>
-        <fieldset {...register("clientsCount")} className={styles.radioInputs}>
-          <legend>Сколько человек будут пользоваться сервисом?</legend>
-
+        <fieldset className={styles.radioInputs}>
+          <legend>Какой у вас бюджет?</legend>
           <div className={styles.items}>
-            <div onClick={() => setRadioValue("1-10")}>
-              <input type="radio" id="low" name="drone" value="1-10" />
+            <div>
+              <input
+                {...register("budget")}
+                value="100 000"
+                type="radio"
+                id="start-b"
+              />
+              <label htmlFor="start-b">100 000 рублей</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset className={styles.radioInputs}>
+          <legend>Сколько человек будут пользоваться сервисом?</legend>
+          <div className={styles.items}>
+            <div>
+              <input
+                {...register("clientsCount")}
+                type="radio"
+                id="low"
+                value="1-10"
+              />
               <label htmlFor="low">1-10</label>
             </div>
 
-            <div onClick={() => setRadioValue("10-100")}>
-              <input type="radio" id="mid" name="drone" value="dew10ey" />
+            <div>
+              <input
+                {...register("clientsCount")}
+                type="radio"
+                id="mid"
+                value="10-100"
+              />
               <label htmlFor="mid">10-100</label>
             </div>
 
-            <div onClick={() => setRadioValue("100-1000")}>
-              <input type="radio" id="high" name="drone" value="louie" />
+            <div>
+              <input
+                {...register("clientsCount")}
+                type="radio"
+                id="high"
+                value="100-1000"
+              />
               <label htmlFor="high">100-1000</label>
             </div>
 
-            <div onClick={() => setRadioValue("1000 и более")}>
-              <input type="radio" id="extra-high" name="drone" value="louie" />
+            <div>
+              <input
+                {...register("clientsCount")}
+                type="radio"
+                id="extra-high"
+                value="1000 и более"
+              />
               <label htmlFor="extra-high">1000 и более</label>
             </div>
           </div>
@@ -198,7 +282,6 @@ const ThanksForm = () => {
             errors.name ||
             errors.clientsCount ||
             errors.contactPreference ||
-            errors.sphere ||
             errors.wishes
               ? true
               : false

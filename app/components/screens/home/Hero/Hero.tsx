@@ -31,7 +31,10 @@ const Hero: FC = () => {
         <div className="container">
           <div className={styles.heroBody}>
             <div className={styles.heroInfo}>
-              <h1 className={styles.title}>КОРПОРАТИВНЫЕ СИСТЕМЫ</h1>
+              <h1 className={styles.title}>
+                Разработка цифровых платформ и веб-сервисов в области
+                оптимизации бизнеса и госуправления
+              </h1>
               <p className={styles.text}>
                 Лидер №1 в области импортозамещения цифровых платформ и
                 сервисов,автоматизации бизнеса и госуправления

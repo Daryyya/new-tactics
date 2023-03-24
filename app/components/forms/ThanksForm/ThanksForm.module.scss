@@ -1,7 +1,6 @@
 @import "../../../assets/styles/variables";
 @import "../../../assets/styles/mixins";
 
-
 .title {
   text-align: center;
   @include adaptiv-value("font-size", 42, 24, 0);
@@ -30,7 +29,8 @@
 }
 
 .radioInputs {
-  border: none;
+  border: 1px solid #6f29e1;
+  padding: 10px 15px;
 
   legend {
     font-family: "Unbounded";
