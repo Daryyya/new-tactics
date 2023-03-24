@@ -149,7 +149,7 @@ const ThanksForm = () => {
               <label htmlFor="e-commerce-portal">Корпоративный портал</label>
             </div>
             <div>
-              <input type="texo />
+              <input type="text" />
             </div>
           </div>
         </fieldset>
