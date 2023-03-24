@@ -82,48 +82,12 @@ const ThanksForm = () => {
           Спасибо за заявку, <br />
           Обязательно заполните форму ниже
         </h1>
-        <div className={styles.inputBlock}>
-          <label
-            className={errors.phone ? `${styles.error}` : ""}
-            htmlFor="phone-input"
-          >
-            {errors.phone ? errors.phone?.message : "Контактный телефон"}
-          </label>
-          <input
-            {...register("phone", {
-              required: "Телефон обязателен для ввода",
-              pattern: {
-                value: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-                message: "Некорректный номер телефона",
-              },
-            })}
-            id="thanks_phone"
-            type="phone"
-            placeholder="Введите здесь..."
-            name="phone"
-          />
-        </div>
-        <div className={styles.inputBlock}>
-          <label
-            className={errors.name ? `${styles.error}` : ""}
-            htmlFor="thanks_name"
-          >
-            {errors.name ? errors.name?.message : "Как к вам обращаться?"}
-          </label>
-          <input
-            {...register("name", { required: "Введите ваше имя!" })}
-            id="thanks_name"
-            type="text"
-            placeholder="Введите здесь..."
-            name="name"
-          />
-        </div>
         <fieldset className={styles.radioInputs}>
           <legend>Что необходимо разработать?</legend>
           <div className={styles.items}>
             <div>
               <input
-                {...register("product")}
+                {...register("product", {required: true})}
                 type="radio"
                 value="Мобильное приложение"
                 id="mobile-app"
@@ -132,7 +96,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product")}
+                {...register("product", {required: true})}
                 type="radio"
                 value="CRM/EPR система"
                 id="crm"
@@ -141,7 +105,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product")}
+                {...register("product", {required: true})}
                 type="radio"
                 value="Мобильное приложение"
                 id="e-commerce-portal"
@@ -150,7 +114,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product")}
+                {...register("product", {required: true})}
                 type="radio"
                 value="Корпоративный сайт"
                 id="e-commerce-site"
@@ -159,7 +123,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product")}
+                {...register("product", {required: true})}
                 type="radio"
                 value="Интернет-магазин"
                 id="e-shop"
@@ -168,7 +132,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product")}
+                {...register("product", {required: true})}
                 type="radio"
                 value="Другое"
                 id="other-product"
@@ -182,7 +146,7 @@ const ThanksForm = () => {
           <div className={styles.items}>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 id="automatization"
                 value="Полная автоматизация бизнеса"
@@ -193,7 +157,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 value="Управление финансами"
                 id="finance"
@@ -202,7 +166,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 value="Документооборот"
                 id="document-flow"
@@ -211,7 +175,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 value="Складской учет. Управление закупками и продажами"
                 id="warehouse-accounting"
@@ -222,7 +186,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 id="staff"
                 value="Персонал: кадры, зарплаты, рекрутинг, аттестация и т.д."
@@ -233,7 +197,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 id="crm-optimization"
                 value="CRM-системы: клиенты, маркетинг, контроль проектов и задач"
@@ -244,7 +208,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 id="production-control"
                 value="Управление производством"
@@ -255,7 +219,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization")}
+                {...register("optimization", {required: true})}
                 type="radio"
                 id="other-optimizations"
                 value="Другое"
@@ -288,7 +252,7 @@ const ThanksForm = () => {
           <div className={styles.items}>
             <div>
               <input
-                {...register("budget")}
+                {...register("budget", {required: true})}
                 value="100 000"
                 type="radio"
                 id="start-b"
@@ -297,7 +261,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("budget")}
+                {...register("budget", {required: true})}
                 value="300 000"
                 type="radio"
                 id="start-b2"
@@ -306,7 +270,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("budget")}
+                {...register("budget", {required: true})}
                 value="600 000"
                 type="radio"
                 id="start-b3"
@@ -315,7 +279,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("budget")}
+                {...register("budget", {required: true})}
                 value="600 000"
                 type="radio"
                 id="start-b4"
@@ -329,7 +293,7 @@ const ThanksForm = () => {
           <div className={styles.items}>
             <div>
               <input
-                {...register("clientsCount")}
+                {...register("clientsCount", {required: true})}
                 type="radio"
                 id="low"
                 value="1-10"
@@ -339,7 +303,7 @@ const ThanksForm = () => {
 
             <div>
               <input
-                {...register("clientsCount")}
+                {...register("clientsCount", {required: true})}
                 type="radio"
                 id="mid"
                 value="10-100"
@@ -349,7 +313,7 @@ const ThanksForm = () => {
 
             <div>
               <input
-                {...register("clientsCount")}
+                {...register("clientsCount", {required: true})}
                 type="radio"
                 id="high"
                 value="100-1000"
@@ -359,7 +323,7 @@ const ThanksForm = () => {
 
             <div>
               <input
-                {...register("clientsCount")}
+                {...register("clientsCount", {required: true})}
                 type="radio"
                 id="extra-high"
                 value="1000 и более"
@@ -376,7 +340,7 @@ const ThanksForm = () => {
             {errors.wishes ? errors.wishes?.message : "Пожелания по проекту"}
           </label>
           <textarea
-            {...register("wishes")}
+            {...register("wishes", {required: true})}
             name="wishes"
             id="wishes"
             placeholder="
