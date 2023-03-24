@@ -33,7 +33,17 @@ const Services: FC = () => {
           transition={{ duration: 0.5 }}
           className={styles.servicesItems}
         >
-          {servicesItems.map((item, index) => (
+          <div className={styles.grid_container}>
+            {
+              servicesItems.map(({title, description}) => (<div key={title}>
+                <h4>{title}</h4>
+                {
+                  description.map(el => <p key={el}>{el}</p>)
+                }
+              </div>))
+            }
+          </div>
+          {/* {servicesItems.map((item, index) => (
             <h4
               className={activeIndex === index ? `${styles.active}` : ""}
               onClick={() => setActiveIndex(index)}
@@ -41,9 +51,9 @@ const Services: FC = () => {
             >
               {item}
             </h4>
-          ))}
+          ))} */}
         </motion.div>
-        {activeIndex === 0 ? (
+        {/* {activeIndex === 0 ? (
           <Design />
         ) : activeIndex === 1 ? (
           <Development />
@@ -51,7 +61,7 @@ const Services: FC = () => {
           <Optimization />
         ) : activeIndex === 3 ? (
           <Support />
-        ) : null}
+        ) : null} */}
       </div>
     </section>
   );
