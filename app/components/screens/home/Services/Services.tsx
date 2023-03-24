@@ -35,7 +35,7 @@ const Services: FC = () => {
         >
           <div className={styles.grid_container}>
             {
-              servicesItems.map(({title, description}) => (<div key={title}>
+              servicesItems.map(({title, description}) => (<div key={title} className={styles.card}>
                 <h4>{title}</h4>
                 {
                   description.map(el => <p key={el}>{el}</p>)

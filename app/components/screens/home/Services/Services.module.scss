@@ -15,21 +15,7 @@
     @include adaptiv-value("margin-bottom", 55, 35, 0);
     margin-top: 55px;
 
-    h4 {
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #878585;
-      @include adaptiv-value("font-size", 25, 16, 0);
-      line-height: 30px;
-      cursor: pointer;
-      transition: color 0.2s ease;
-      &:hover {
-        color: white;
-      }
-      &.active {
-        color: white;
-      }
-    }
+   
   }
   .serviceBlock {
     display: flex;
@@ -88,7 +74,30 @@
 }
 
 .grid_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  padding: 30px;
+  border: 1px solid;
+  flex-basis: 410px;
+
+  h4 {
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #878585;
+      @include adaptiv-value('margin-bottom', 30, 20, 0);
+      line-height: 30px;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      &:hover {
+        color: white;
+      }
+      &.active {
+        color: white;
+      }
+  }
 }

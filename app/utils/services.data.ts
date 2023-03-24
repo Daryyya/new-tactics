@@ -1,4 +1,9 @@
-export const servicesItems: object[] = [
+interface ServicesItem {
+  title: string;
+  description: string[];
+}
+
+export const servicesItems: ServicesItem[] = [
   {
     title: 'Разработка комплексных систем:',
     description: ['-Корпоративные системы', '-Порталы и web-сервисы', '-Цифровые платформы и экосистемы', '-ERP, CRM, BPM - системы', '-Разработка алгоритмов на основе ИИ'],
