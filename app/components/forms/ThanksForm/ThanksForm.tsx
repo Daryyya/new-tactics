@@ -149,7 +149,31 @@ const ThanksForm = () => {
               <label htmlFor="e-commerce-portal">Корпоративный портал</label>
             </div>
             <div>
-              <input type="text" />
+              <input
+                {...register("product")}
+                type="radio"
+                value="Корпоративный сайт"
+                id="e-commerce-site"
+              />
+              <label htmlFor="e-commerce-site">Корпоративный сайт</label>
+            </div>
+            <div>
+              <input
+                {...register("product")}
+                type="radio"
+                value="Интернет-магазин"
+                id="e-shop"
+              />
+              <label htmlFor="e-shop">Интернет-магазин</label>
+            </div>
+            <div>
+              <input
+                {...register("product")}
+                type="radio"
+                value="Другое"
+                id="other-product"
+              />
+              <label htmlFor="other-product">Другое</label>
             </div>
           </div>
         </fieldset>
@@ -175,6 +199,68 @@ const ThanksForm = () => {
                 id="finance"
               />
               <label htmlFor="finance">Управление финансами</label>
+            </div>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                value="Документооборот"
+                id="document-flow"
+              />
+              <label htmlFor="document-flow">Документооборот</label>
+            </div>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                value="Складской учет. Управление закупками и продажами"
+                id="warehouse-accounting"
+              />
+              <label htmlFor="warehouse-accounting">
+                Складской учет. Управление закупками и продажами
+              </label>
+            </div>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                id="staff"
+                value="Персонал: кадры, зарплаты, рекрутинг, аттестация и т.д."
+              />
+              <label htmlFor="staff">
+                Персонал: кадры, зарплаты, рекрутинг, аттестация и т.д.
+              </label>
+            </div>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                id="crm-optimization"
+                value="CRM-системы: клиенты, маркетинг, контроль проектов и задач"
+              />
+              <label htmlFor="crm-optimization">
+                CRM-системы: клиенты, маркетинг, контроль проектов и задач
+              </label>
+            </div>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                id="production-control"
+                value="Управление производством"
+              />
+              <label htmlFor="production-control">
+                Управление производством
+              </label>
+            </div>
+            <div>
+              <input
+                {...register("optimization")}
+                type="radio"
+                id="other-optimizations"
+                value="Другое"
+              />
+              <label htmlFor="other-optimizations">Другое</label>
             </div>
           </div>
         </fieldset>
@@ -207,7 +293,34 @@ const ThanksForm = () => {
                 type="radio"
                 id="start-b"
               />
-              <label htmlFor="start-b">100 000 рублей</label>
+              <label htmlFor="start-b">100 000 руб</label>
+            </div>
+            <div>
+              <input
+                {...register("budget")}
+                value="300 000"
+                type="radio"
+                id="start-b2"
+              />
+              <label htmlFor="start-b2">300 000 руб</label>
+            </div>
+            <div>
+              <input
+                {...register("budget")}
+                value="600 000"
+                type="radio"
+                id="start-b3"
+              />
+              <label htmlFor="start-b3">600 000 руб</label>
+            </div>
+            <div>
+              <input
+                {...register("budget")}
+                value="600 000"
+                type="radio"
+                id="start-b4"
+              />
+              <label htmlFor="start-b4">1 млн руб</label>
             </div>
           </div>
         </fieldset>
