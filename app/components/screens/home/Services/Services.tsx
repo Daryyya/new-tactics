@@ -7,6 +7,7 @@ import { Development } from "./Development";
 import { Optimization } from "./Optimization";
 import { Support } from "./Support";
 import Link from "next/link";
+import Image from "next/image";
 
 const Services: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -35,16 +36,21 @@ const Services: FC = () => {
           className={styles.servicesItems}
         >
           <div className={styles.grid_container}>
-            {servicesItems.map(({ title, description, href }, index) => (
+            {servicesItems.map(({ title, description, image, href }, index) => (
               <div
                 onClick={() => setActiveIndex(index)}
                 key={title}
                 className={styles.card}
               >
-                <h4>{title}</h4>
+                <div className={styles.toprow}>
+                  <Image src={image} alt='icon' width={60} height={60}/> 
+                  <h4 className={styles.toprow__title}>{title}</h4>
+                </div>
+                <div className={styles.bottomrow}>
                 {description.map((el) => (
-                  <p key={el}>{el}</p>
+                  <p key={el} className={styles.bottomrow__text}>{el}</p>
                 ))}
+                </div>
                 {/* <Link href={href}></Link> */}
               </div>
             ))}
