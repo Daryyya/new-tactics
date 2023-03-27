@@ -14,7 +14,7 @@ import React from "react";
 
 const DigitalSystem = () => {
   return (
-    <Layout title="Экосистемы" description="description">
+    <Layout title="Разработка экосистемы" description="description">
       <DigitalSystemBanner />
       <Services />
       <Cases />

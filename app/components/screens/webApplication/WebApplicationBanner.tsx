@@ -1,11 +1,11 @@
-import { developmentSvg, telegramSvg } from "@/assets/images/home";
-import { whatsappSvg } from "@/assets/images/shared";
+import { telegramSvg } from "@/assets/images/home";
+import { whatsappSvg, webApplicationBanner } from "@/assets/images/shared";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Discuss from "../modals/Discuss/Discuss";
 
-import styles from "./WebApplicationBunner.module.scss";
+import styles from "./WebApplicationBanner.module.scss";
 
 const WebApplicationBanner = () => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
@@ -35,7 +35,7 @@ const WebApplicationBanner = () => {
             <div>
               <Image
                 className={styles.image}
-                src={developmentSvg}
+                src={webApplicationBanner}
                 alt="Приложение"
               />
             </div>

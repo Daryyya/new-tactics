@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import WebApplicationBanner from "@/components/screens/webApplication/webApplicationBunner";
+import WebApplicationBanner from "@/components/screens/webApplication/WebApplicationBanner";
 import About from "@/components/screens/home/About/About";
 import { Awards } from "@/components/screens/home/Awards/Awards";
 import Cases from "@/components/screens/home/Cases/Cases";
@@ -14,7 +14,7 @@ import React from "react";
 
 const WebApplication = () => {
   return (
-    <Layout title="Веб-приложения" description="description">
+    <Layout title="Разработка веб-приложений" description="description">
       <WebApplicationBanner />
       <Services />
       <Cases />
