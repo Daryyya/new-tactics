@@ -1,5 +1,5 @@
-import { developmentSvg, telegramSvg } from "@/assets/images/home";
-import { whatsappSvg } from "@/assets/images/shared";
+import { telegramSvg } from "@/assets/images/home";
+import { whatsappSvg, corporateSystemBanner } from "@/assets/images/shared";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -35,7 +35,7 @@ const CorporateSystemBanner = () => {
             <div>
               <Image
                 className={styles.image}
-                src={developmentSvg}
+                src={corporateSystemBanner}
                 alt="Приложение"
               />
             </div>

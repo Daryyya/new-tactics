@@ -14,7 +14,7 @@ import React from "react";
 
 const CorporateSystem = () => {
   return (
-    <Layout title="Корпоративные системы" description="description">
+    <Layout title="Разработка корпоративных систем" description="description">
       <CorporateSystemBanner/>
       <Services />
       <Cases />
