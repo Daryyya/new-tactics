@@ -81,23 +81,41 @@
 }
 
 .card {
+  position: relative;
   padding: 30px;
   border: 1px solid;
   flex-basis: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .3s;
+
+  &:hover {
+    transform: scale(0.97);
+    box-shadow: 0 2px 20px $yellow;
+
+    a {
+      inset: 0;
+    }
+  }
 
   h4 {
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #878585;
+      color: $yellow;
       @include adaptiv-value('margin-bottom', 30, 20, 0);
       line-height: 30px;
       cursor: pointer;
       transition: color 0.2s ease;
       &:hover {
-        color: white;
+        opacity: 0.9;
       }
       &.active {
-        color: white;
+        opacity: 0.9;
       }
+  }
+
+  a {
+    position: absolute;
   }
 }

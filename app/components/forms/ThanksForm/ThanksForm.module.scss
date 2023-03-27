@@ -33,6 +33,7 @@
   padding: 10px 15px;
 
   legend {
+    position: relative;
     font-family: "Unbounded";
     font-weight: 500;
     font-size: 16px;
@@ -111,6 +112,10 @@
 }
 
 .error {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  font-size: 12px;
   color: red;
 }
 

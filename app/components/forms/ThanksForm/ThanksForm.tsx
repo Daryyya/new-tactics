@@ -40,16 +40,17 @@ const ThanksForm = () => {
     formState: { errors },
   } = useForm<IThanksParams>({
     mode: "onSubmit",
-    defaultValues: { name: name, phone: phone, wishes: description },
+    defaultValues: {name: name, phone: phone, wishes: description },
   });
 
   const onSubmit = (data: any) => {
     setIsLoading(true);
     console.log(data);
-    sendMail({ ...data })
+    sendMail({ ...data})
       .then((res) => {
         console.log(res.data);
         setIsLoading(false);
+        router.push('/success');
       })
       .catch((err) => {
         console.log(err);
@@ -83,7 +84,10 @@ const ThanksForm = () => {
           Обязательно заполните форму ниже
         </h1>
         <fieldset className={styles.radioInputs}>
-          <legend>Что необходимо разработать?</legend>
+          <legend>
+            Что необходимо разработать?
+            <span className={styles.error}>{errors.product && 'Выберите вариант ответа'}</span>
+            </legend>
           <div className={styles.items}>
             <div>
               <input
@@ -92,7 +96,9 @@ const ThanksForm = () => {
                 value="Мобильное приложение"
                 id="mobile-app"
               />
-              <label htmlFor="mobile-app">Мобильное приложение</label>
+              <label htmlFor="mobile-app">
+                Мобильное приложение
+                </label>
             </div>
             <div>
               <input
@@ -142,7 +148,10 @@ const ThanksForm = () => {
           </div>
         </fieldset>
         <fieldset className={styles.radioInputs}>
-          <legend>Какие участки учета хотите оптимизировать?</legend>
+          <legend>
+            Какие участки учета хотите оптимизировать?
+            <span className={styles.error}>{errors.optimization && 'Выберите вариант ответа'}</span>
+            </legend>
           <div className={styles.items}>
             <div>
               <input
@@ -228,27 +237,11 @@ const ThanksForm = () => {
             </div>
           </div>
         </fieldset>
-        <div className={styles.inputBlock}>
-          <label
-            className={errors.contactPreference ? `${styles.error}` : ""}
-            htmlFor="thanks_preference"
-          >
-            {errors.contactPreference
-              ? errors.contactPreference?.message
-              : "Предпочтительный вид связи"}
-          </label>
-          <input
-            {...register("contactPreference", {
-              required: "Укажите удобный вам вид связи",
-            })}
-            id="thanks_preference"
-            type="text"
-            placeholder="Введите здесь..."
-            name="contactPreference"
-          />
-        </div>
         <fieldset className={styles.radioInputs}>
-          <legend>Какой у вас бюджет?</legend>
+          <legend>
+            Какой у вас бюджет?
+            <span className={styles.error}>{errors.budget && 'Выберите вариант ответа'}</span>
+            </legend>
           <div className={styles.items}>
             <div>
               <input
@@ -289,7 +282,10 @@ const ThanksForm = () => {
           </div>
         </fieldset>
         <fieldset className={styles.radioInputs}>
-          <legend>Сколько человек будут пользоваться сервисом?</legend>
+          <legend>
+            Сколько человек будут пользоваться сервисом?
+            <span className={styles.error}>{errors.clientsCount && 'Выберите вариант ответа'}</span>
+            </legend>
           <div className={styles.items}>
             <div>
               <input
@@ -332,21 +328,6 @@ const ThanksForm = () => {
             </div>
           </div>
         </fieldset>
-        <div className={styles.inputBlock}>
-          <label
-            className={errors.wishes ? `${styles.error}` : ""}
-            htmlFor="wishes"
-          >
-            {errors.wishes ? errors.wishes?.message : "Пожелания по проекту"}
-          </label>
-          <textarea
-            {...register("wishes", {required: true})}
-            name="wishes"
-            id="wishes"
-            placeholder="
-       Введите здесь"
-          />
-        </div>
         <p>
           Нажимая на кнопку "отправить", вы соглашаетесь с{" "}
           <Link target="_blank" href="/policy">

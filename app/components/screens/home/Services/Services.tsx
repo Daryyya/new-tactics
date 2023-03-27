@@ -6,6 +6,7 @@ import { Design } from "./Design";
 import { Development } from "./Development";
 import { Optimization } from "./Optimization";
 import { Support } from "./Support";
+import Link from "next/link";
 
 const Services: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,34 +35,21 @@ const Services: FC = () => {
           className={styles.servicesItems}
         >
           <div className={styles.grid_container}>
-            {
-              servicesItems.map(({title, description}) => (<div key={title} className={styles.card}>
+            {servicesItems.map(({ title, description, href }, index) => (
+              <div
+                onClick={() => setActiveIndex(index)}
+                key={title}
+                className={styles.card}
+              >
                 <h4>{title}</h4>
-                {
-                  description.map(el => <p key={el}>{el}</p>)
-                }
-              </div>))
-            }
+                {description.map((el) => (
+                  <p key={el}>{el}</p>
+                ))}
+                {/* <Link href={href}></Link> */}
+              </div>
+            ))}
           </div>
-          {/* {servicesItems.map((item, index) => (
-            <h4
-              className={activeIndex === index ? `${styles.active}` : ""}
-              onClick={() => setActiveIndex(index)}
-              key={item}
-            >
-              {item}
-            </h4>
-          ))} */}
         </motion.div>
-        {/* {activeIndex === 0 ? (
-          <Design />
-        ) : activeIndex === 1 ? (
-          <Development />
-        ) : activeIndex === 2 ? (
-          <Optimization />
-        ) : activeIndex === 3 ? (
-          <Support />
-        ) : null} */}
       </div>
     </section>
   );

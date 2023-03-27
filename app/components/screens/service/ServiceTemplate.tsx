@@ -32,7 +32,7 @@ export const ServiceTemplate: FC<IServiceTemplate> = ({
             >
               <div className={styles.serviceInfoLabel}>
                 <p>Услуги - {label}</p>
-                <Link href="/">На главную</Link>
+                <Link href="/#services">На главную</Link>
               </div>
               <h1>{title}</h1>
 
