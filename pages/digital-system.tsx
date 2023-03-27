@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import DigitalSystemBanner from "@/components/screens/digitalSystem/digitalSystem";
+import DigitalSystemBanner from "@/components/screens/digitalSystem/digitalSystemBanner";
 import About from "@/components/screens/home/About/About";
 import { Awards } from "@/components/screens/home/Awards/Awards";
 import Cases from "@/components/screens/home/Cases/Cases";

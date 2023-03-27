@@ -2,8 +2,8 @@
 @import "../../../assets/styles/mixins";
 
 .digitalSystemBanner {
-  padding-top: 70px;
-  padding-bottom: &0px;
+  padding-top: 100px;
+  padding-bottom: 30px;
 
   .digitalSystemBannerBody {
     display: flex;
@@ -17,23 +17,27 @@
     }
 
     .info {
-      max-width: 744px;
+      max-width: 785px;
       h1 {
-        @include adaptiv-value("font-size", 58, 28, 0);
+        @include adaptiv-value("font-size", 54, 28, 0);
         line-height: 128%;
-        margin-bottom: 21px;
+        margin-bottom: 30px;
+
+        @media (min-width: 1600px) {
+          font-size: 48px;
+        }
       }
 
       p {
-        max-width: 711px;
         @include adaptiv-value("font-size", 34, 18, 0);
         line-height: 122.9%;
-        margin-bottom: 50px;
+        color: rgba(255, 255, 255, 0.5);;
+        margin-bottom: 105px;
       }
 
       button {
         @include adaptiv-value("font-size", 16, 11, 0);
-        line-height: 19px;
+        line-height: 128%;
         background: #000;
         background: $yellow;
         @include adaptiv-value("padding-top", 12, 8, 0);
@@ -41,8 +45,8 @@
         @include adaptiv-value("padding-right", 36, 10, 0);
         @include adaptiv-value("padding-left", 36, 10, 0);
         border-radius: 3px;
-        transition: all 0.2s ease;
-        margin-bottom: 10px;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
 
         &:hover {
           background: $yellowHover;
@@ -52,7 +56,7 @@
 
       .icons {
         display: flex;
-        gap: 30px;
+        gap: 23px;
 
         a {
           background: linear-gradient(
@@ -66,7 +70,7 @@
           align-items: center;
           width: 54px;
           height: 54px;
-          transition: opacity 0.2s ease;
+          transition: opacity 0.3s ease;
           &:hover {
             opacity: 0.5;
           }

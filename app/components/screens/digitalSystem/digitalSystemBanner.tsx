@@ -1,11 +1,11 @@
-import { developmentSvg, telegramSvg } from "@/assets/images/home";
-import { whatsappSvg } from "@/assets/images/shared";
+import { telegramSvg } from "@/assets/images/home";
+import { whatsappSvg, digitalSystemBanner } from "@/assets/images/shared";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Discuss from "../modals/Discuss/Discuss";
 
-import styles from "./DigitalSystem.module.scss";
+import styles from "./DigitalSystemBanner.module.scss";
 
 const DigitalSystemBanner = () => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
@@ -35,7 +35,7 @@ const DigitalSystemBanner = () => {
             <div>
               <Image
                 className={styles.image}
-                src={developmentSvg}
+                src={digitalSystemBanner}
                 alt="Приложение"
               />
             </div>
