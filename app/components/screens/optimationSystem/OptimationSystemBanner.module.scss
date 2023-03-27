@@ -1,0 +1,81 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.optimationSystemBanner {
+  padding-top: 100px;
+  padding-bottom: 30px;
+
+  .optimationSystemBannerBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .image {
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    .info {
+      max-width: 785px;
+      h1 {
+        @include adaptiv-value("font-size", 54, 28, 0);
+        line-height: 128%;
+        margin-bottom: 30px;
+
+        @media (min-width: 1600px) {
+          font-size: 48px;
+        }
+      }
+
+      p {
+        @include adaptiv-value("font-size", 34, 18, 0);
+        line-height: 122.9%;
+        color: rgba(255, 255, 255, 0.5);;
+        margin-bottom: 105px;
+      }
+
+      button {
+        @include adaptiv-value("font-size", 16, 11, 0);
+        line-height: 128%;
+        background: #000;
+        background: $yellow;
+        @include adaptiv-value("padding-top", 12, 8, 0);
+        @include adaptiv-value("padding-bottom", 12, 8, 0);
+        @include adaptiv-value("padding-right", 36, 10, 0);
+        @include adaptiv-value("padding-left", 36, 10, 0);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+
+        &:hover {
+          background: $yellowHover;
+          color: white;
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 23px;
+
+        a {
+          background: linear-gradient(
+            93.82deg,
+            rgba(48, 38, 85, 0.43) 1.75%,
+            rgba(20, 1, 41, 0.73) 98.13%
+          );
+          border-radius: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 54px;
+          height: 54px;
+          transition: opacity 0.3s ease;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
