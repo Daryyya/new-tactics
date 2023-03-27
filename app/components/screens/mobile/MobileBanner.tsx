@@ -1,5 +1,5 @@
 import { telegramSvg } from "@/assets/images/home";
-import { mobileBannerSvg, whatsappSvg } from "@/assets/images/shared";
+import { mobileBanner, whatsappSvg } from "@/assets/images/shared";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
@@ -34,7 +34,7 @@ const MobileBanner: FC = () => {
             <div>
               <Image
                 className={styles.image}
-                src={mobileBannerSvg}
+                src={mobileBanner}
                 alt="Приложение"
               />
             </div>

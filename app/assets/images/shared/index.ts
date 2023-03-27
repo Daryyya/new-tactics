@@ -1,4 +1,15 @@
 import whatsappSvg from "./whatsapp.svg";
-import mobileBannerSvg from "./banner-img.svg";
+import mobileBanner from "./mobileBanner.svg";
+import optimationSystemBanner from "./optimationSystemBanner.svg";
+import digitalSystemBanner from "./digitalSystemBanner.svg";
+import corporateSystemBanner from './corporateSystemBanner.svg'
+import webApplicationBanner from './webApplicationBanner.svg'
 
-export { whatsappSvg, mobileBannerSvg };
+export {
+  whatsappSvg,
+  mobileBanner,
+  optimationSystemBanner,
+  digitalSystemBanner,
+  corporateSystemBanner,
+  webApplicationBanner,
+};
