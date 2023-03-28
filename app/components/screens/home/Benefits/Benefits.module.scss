@@ -1,7 +1,7 @@
 @import "../../../../assets/styles/variables";
 @import "../../../../assets/styles/mixins";
 .benefits {
-  padding-top: 70px;
+  padding-top: 100px;
   padding-bottom: 70px;
   background: $lighterBg;
   z-index: 20;
@@ -9,6 +9,7 @@
   .benefitsBody {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     align-items: center;
     @media (max-width: 1200px) {
       justify-content: center;
@@ -19,25 +20,31 @@
       }
     }
     .info {
-      max-width: 610px;
+      max-width: 720px;
+
+      h2 {
+        margin-bottom: 40px;
+        text-transform: uppercase;
+      }
 
       .benefitsItems {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 21px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
         margin-bottom: 35px;
       }
 
       .benefitsItem {
         display: flex;
         align-items: center;
-        align-items: flex-start;
-        gap: 11px;
+        justify-content: space-between;
+        gap: 17px;
 
         h3 {
-          max-width: 226px;
-          @include adaptiv-value("font-size", 22, 15, 0);
+          max-width: 275px;
+          @include adaptiv-value("font-size", 20, 15, 0);
         }
       }
       p {

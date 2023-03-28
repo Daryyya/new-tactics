@@ -22,8 +22,10 @@
       @include adaptiv-value("margin-bottom", 29, 15, 0);
     }
     .text {
-      @include adaptiv-value("font-size", 34, 13, 0);
-      line-height: 111.9%;
+      font-family: "Unbounded", cursive;
+      font-weight: 400;
+      @include adaptiv-value("font-size", 24, 13, 0);
+      line-height: 128%;
       @include adaptiv-value("margin-bottom", 40, 20, 0);
       @media (max-width: 992px) {
         max-width: 600px;

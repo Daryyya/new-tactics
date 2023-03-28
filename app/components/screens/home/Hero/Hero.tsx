@@ -1,4 +1,4 @@
-import { macbook } from "@/assets/images/home";
+import hero from "@/assets/images/home/hero.png";
 import { ScrollContext } from "@/utils/ScrollObserver/ScrollObserver";
 import Image from "next/image";
 import { FC, useContext, useRef, useState } from "react";
@@ -47,7 +47,7 @@ const Hero: FC = () => {
               </button>
             </div>
             <div>
-              <Image className={styles.heroImage} src={macbook} alt="laptop" />
+              <Image className={styles.heroImage} src={hero} alt="laptop" />
             </div>
           </div>
         </div>
