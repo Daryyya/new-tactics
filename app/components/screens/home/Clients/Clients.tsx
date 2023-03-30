@@ -49,7 +49,7 @@ export const Clients: FC = () => {
           <div className={styles.clientsItem}>
             <Image src={clientsThird} alt="клиент" />
             <div>
-              <h3>Правиительство г.Москва</h3>
+              <h3>Правительство г.Москва</h3>
             </div>
           </div>
         </motion.div>

@@ -83,7 +83,7 @@ export const Footer: FC = () => {
           <div className={styles.supoortItem}>
             <Image src={securitySvg} alt="министерство" />
             <div>
-              <p>Надёжный предпринематель</p>
+              <p>Надёжный предприниматель</p>
               <Link target="_blank"  href="https://tenchat.ru/Saltanyuk?utm_source=d445e866-122e-48f0-9648-9df93c6a8f17">По версии Tenchat</Link>
             </div>
           </div>

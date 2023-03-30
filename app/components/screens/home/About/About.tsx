@@ -32,7 +32,7 @@ const About: FC = () => {
           </div>
           <div className={styles.aboutItem}>
             <h3>45+</h3>
-            <p>Млн. ₽ принесли нашим плиентам разработанные решения</p>
+            <p>Млн. ₽ принесли нашим клиентам разработанные решения</p>
           </div>
           <div className={styles.aboutItem}>
             <h3>5</h3>
