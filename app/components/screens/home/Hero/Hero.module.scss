@@ -17,9 +17,10 @@
     }
 
     .title {
-      @include adaptiv-value("font-size", 58, 24, 0);
+      max-width: 720px;
+      @include adaptiv-value("font-size", 48, 24, 0);
       line-height: 128%;
-      @include adaptiv-value("margin-bottom", 29, 15, 0);
+      @include adaptiv-value("margin-bottom", 49, 25, 0);
     }
     .text {
       font-family: "Unbounded", cursive;

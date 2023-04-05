@@ -35,10 +35,10 @@ const Hero: FC = () => {
                 Разработка цифровых платформ и веб-сервисов в области
                 оптимизации бизнеса и госуправления
               </h1>
-              <p className={styles.text}>
+              {/* <p className={styles.text}>
                 Лидер №1 в области импортозамещения цифровых платформ и
                 сервисов,автоматизации бизнеса и госуправления
-              </p>
+              </p> */}
               <button
                 onClick={() => setIsOpenPopup(true)}
                 className={styles.button}
