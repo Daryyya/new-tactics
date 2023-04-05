@@ -24,12 +24,12 @@ const ThanksForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const { name, description, phone } = useContext(FormContext);
+  const { name, phone } = useContext(FormContext);
 
   const router = useRouter();
 
   useEffect(() => {
-    if (!name || !description || !phone) {
+    if (!name || !phone) {
       router.push("/");
     }
   }, []);
@@ -40,17 +40,17 @@ const ThanksForm = () => {
     formState: { errors },
   } = useForm<IThanksParams>({
     mode: "onSubmit",
-    defaultValues: {name: name, phone: phone, wishes: description },
+    defaultValues: { name: name, phone: phone },
   });
 
   const onSubmit = (data: any) => {
     setIsLoading(true);
     console.log(data);
-    sendMail({ ...data})
+    sendMail({ ...data, name: name, phone: phone })
       .then((res) => {
         console.log(res.data);
         setIsLoading(false);
-        router.push('/success');
+        router.push("/success");
       })
       .catch((err) => {
         console.log(err);
@@ -86,23 +86,23 @@ const ThanksForm = () => {
         <fieldset className={styles.radioInputs}>
           <legend>
             Что необходимо разработать?
-            <span className={styles.error}>{errors.product && 'Выберите вариант ответа'}</span>
-            </legend>
+            <span className={styles.error}>
+              {errors.product && "Выберите вариант ответа"}
+            </span>
+          </legend>
           <div className={styles.items}>
             <div>
               <input
-                {...register("product", {required: true})}
+                {...register("product", { required: true })}
                 type="radio"
                 value="Мобильное приложение"
                 id="mobile-app"
               />
-              <label htmlFor="mobile-app">
-                Мобильное приложение
-                </label>
+              <label htmlFor="mobile-app">Мобильное приложение</label>
             </div>
             <div>
               <input
-                {...register("product", {required: true})}
+                {...register("product", { required: true })}
                 type="radio"
                 value="CRM/EPR система"
                 id="crm"
@@ -111,7 +111,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product", {required: true})}
+                {...register("product", { required: true })}
                 type="radio"
                 value="Мобильное приложение"
                 id="e-commerce-portal"
@@ -120,7 +120,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product", {required: true})}
+                {...register("product", { required: true })}
                 type="radio"
                 value="Корпоративный сайт"
                 id="e-commerce-site"
@@ -129,7 +129,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product", {required: true})}
+                {...register("product", { required: true })}
                 type="radio"
                 value="Интернет-магазин"
                 id="e-shop"
@@ -138,7 +138,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("product", {required: true})}
+                {...register("product", { required: true })}
                 type="radio"
                 value="Другое"
                 id="other-product"
@@ -150,12 +150,14 @@ const ThanksForm = () => {
         <fieldset className={styles.radioInputs}>
           <legend>
             Какие участки учета хотите оптимизировать?
-            <span className={styles.error}>{errors.optimization && 'Выберите вариант ответа'}</span>
-            </legend>
+            <span className={styles.error}>
+              {errors.optimization && "Выберите вариант ответа"}
+            </span>
+          </legend>
           <div className={styles.items}>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 id="automatization"
                 value="Полная автоматизация бизнеса"
@@ -166,7 +168,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 value="Управление финансами"
                 id="finance"
@@ -175,7 +177,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 value="Документооборот"
                 id="document-flow"
@@ -184,7 +186,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 value="Складской учет. Управление закупками и продажами"
                 id="warehouse-accounting"
@@ -195,7 +197,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 id="staff"
                 value="Персонал: кадры, зарплаты, рекрутинг, аттестация и т.д."
@@ -206,7 +208,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 id="crm-optimization"
                 value="CRM-системы: клиенты, маркетинг, контроль проектов и задач"
@@ -217,7 +219,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 id="production-control"
                 value="Управление производством"
@@ -228,7 +230,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("optimization", {required: true})}
+                {...register("optimization", { required: true })}
                 type="radio"
                 id="other-optimizations"
                 value="Другое"
@@ -240,12 +242,14 @@ const ThanksForm = () => {
         <fieldset className={styles.radioInputs}>
           <legend>
             Какой у вас бюджет?
-            <span className={styles.error}>{errors.budget && 'Выберите вариант ответа'}</span>
-            </legend>
+            <span className={styles.error}>
+              {errors.budget && "Выберите вариант ответа"}
+            </span>
+          </legend>
           <div className={styles.items}>
             <div>
               <input
-                {...register("budget", {required: true})}
+                {...register("budget", { required: true })}
                 value="100 000"
                 type="radio"
                 id="start-b"
@@ -254,7 +258,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("budget", {required: true})}
+                {...register("budget", { required: true })}
                 value="300 000"
                 type="radio"
                 id="start-b2"
@@ -263,7 +267,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("budget", {required: true})}
+                {...register("budget", { required: true })}
                 value="600 000"
                 type="radio"
                 id="start-b3"
@@ -272,7 +276,7 @@ const ThanksForm = () => {
             </div>
             <div>
               <input
-                {...register("budget", {required: true})}
+                {...register("budget", { required: true })}
                 value="600 000"
                 type="radio"
                 id="start-b4"
@@ -284,12 +288,14 @@ const ThanksForm = () => {
         <fieldset className={styles.radioInputs}>
           <legend>
             Сколько человек будут пользоваться сервисом?
-            <span className={styles.error}>{errors.clientsCount && 'Выберите вариант ответа'}</span>
-            </legend>
+            <span className={styles.error}>
+              {errors.clientsCount && "Выберите вариант ответа"}
+            </span>
+          </legend>
           <div className={styles.items}>
             <div>
               <input
-                {...register("clientsCount", {required: true})}
+                {...register("clientsCount", { required: true })}
                 type="radio"
                 id="low"
                 value="1-10"
@@ -299,7 +305,7 @@ const ThanksForm = () => {
 
             <div>
               <input
-                {...register("clientsCount", {required: true})}
+                {...register("clientsCount", { required: true })}
                 type="radio"
                 id="mid"
                 value="10-100"
@@ -309,7 +315,7 @@ const ThanksForm = () => {
 
             <div>
               <input
-                {...register("clientsCount", {required: true})}
+                {...register("clientsCount", { required: true })}
                 type="radio"
                 id="high"
                 value="100-1000"
@@ -319,7 +325,7 @@ const ThanksForm = () => {
 
             <div>
               <input
-                {...register("clientsCount", {required: true})}
+                {...register("clientsCount", { required: true })}
                 type="radio"
                 id="extra-high"
                 value="1000 и более"
@@ -328,6 +334,19 @@ const ThanksForm = () => {
             </div>
           </div>
         </fieldset>
+        <div className={styles.inputBlock}>
+          <label
+            className={errors.wishes ? `${styles.error}` : ""}
+            htmlFor="thanks-wishes"
+          >
+            {errors.wishes ? errors.wishes.message : "Опишите ваш проект"}
+          </label>
+          <textarea
+            placeholder="Введите здесь..."
+            {...register("wishes", { required: "Опишите, пожалуйста, проект" })}
+            id="thanks-wishes"
+          />
+        </div>
         <p>
           Нажимая на кнопку "отправить", вы соглашаетесь с{" "}
           <Link target="_blank" href="/policy">

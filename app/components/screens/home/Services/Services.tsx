@@ -2,16 +2,9 @@ import { FC, useState } from "react";
 import styles from "./Services.module.scss";
 import { motion } from "framer-motion";
 import { servicesItems } from "@/utils/services.data";
-import { Design } from "./Design";
-import { Development } from "./Development";
-import { Optimization } from "./Optimization";
-import { Support } from "./Support";
-import Link from "next/link";
 import Image from "next/image";
 
 const Services: FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section id="services" className={styles.services}>
       <div className="container">
@@ -36,23 +29,21 @@ const Services: FC = () => {
           className={styles.servicesItems}
         >
           <div className={styles.grid_container}>
-            {servicesItems.map(({ title, description, image, href }, index) => (
-              <div
-                onClick={() => setActiveIndex(index)}
-                key={title}
-                className={styles.card}
-              >
+            {servicesItems.map(({ title, description, image, href }) => (
+              <motion.div key={href} className={styles.card}>
                 <div className={styles.toprow}>
-                  <Image src={image} alt='icon' width={60} height={60}/> 
+                  <Image src={image} alt="icon" width={60} height={60} />
                   <h4 className={styles.toprow__title}>{title}</h4>
                 </div>
                 <div className={styles.bottomrow}>
-                {description.map((el) => (
-                  <p key={el} className={styles.bottomrow__text}>{el}</p>
-                ))}
+                  {description.map((el) => (
+                    <p key={el} className={styles.bottomrow__text}>
+                      {el}
+                    </p>
+                  ))}
                 </div>
                 {/* <Link href={href}></Link> */}
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

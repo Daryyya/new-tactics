@@ -65,29 +65,6 @@ export const DiscussForm: FC = () => {
           aria-invalid={errors.name ? true : false}
         />
       </div>
-      <div className={styles.inputBlock}>
-        <label
-          className={errors.description ? `${styles.error}` : ""}
-          htmlFor="description"
-        >
-          {errors.description
-            ? errors.description?.message + "*"
-            : "Опишите ваш проект"}
-        </label>
-        <textarea
-          {...register("description", {
-            required: "Опишите, пожалуйста, ваш проект",
-            pattern: {
-              value: /[A-Za-zА-Яа-яЁё]{3,}/,
-              message: "Некорректное описание",
-            },
-          })}
-          name="description"
-          id="description"
-          placeholder="Введите здесь"
-          aria-invalid={errors.description ? true : false}
-        ></textarea>
-      </div>
       <button
         className={styles.submitBtn}
         disabled={

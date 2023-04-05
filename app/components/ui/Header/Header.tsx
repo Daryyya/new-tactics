@@ -18,7 +18,7 @@ const Header: FC = () => {
     }
   }, [isOpenMenu]);
 
-  const { name, phone, description } = useContext(FormContext);
+  const { name, phone } = useContext(FormContext);
 
   return (
     <>
@@ -49,7 +49,7 @@ const Header: FC = () => {
                 <span>+7 (916) 697 42-27</span>
               </Link>
               <button
-                disabled={name || phone || description ? true : false}
+                disabled={name || phone ? true : false}
                 onClick={() => setIsOpenPopup(true)}
                 className={styles.button}
               >

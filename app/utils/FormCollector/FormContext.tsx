@@ -10,7 +10,6 @@ import {
 interface IForm {
   name: string;
   phone: string;
-  description: string;
 }
 
 interface IContext extends IForm {
@@ -20,14 +19,12 @@ interface IContext extends IForm {
 export const FormContext = createContext<IContext>({
   name: "",
   phone: "",
-  description: "",
 } as IContext);
 
 const FormController: FC<PropsWithChildren<unknown>> = ({ children }) => {
   const [form, setForm] = useState<IForm>({
     name: "",
     phone: "",
-    description: "",
   });
   return (
     <FormContext.Provider value={{ ...form, setForm }}>
