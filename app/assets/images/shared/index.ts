@@ -5,6 +5,7 @@ import digitalSystemBanner from "./digitalSystemBanner.svg";
 import corporateSystemBanner from './corporateSystemBanner.svg';
 import webApplicationBanner from './webApplicationBanner.svg';
 import bankPlatformBanner from './bankPlatformBanner.svg';
+import documentFlowSystembanner from './documentFlowSystemBanner.svg';
 
 export {
   whatsappSvg,
@@ -14,4 +15,5 @@ export {
   corporateSystemBanner,
   webApplicationBanner,
   bankPlatformBanner,
+  documentFlowSystembanner
 };
