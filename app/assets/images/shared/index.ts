@@ -7,7 +7,8 @@ import webApplicationBanner from './webApplicationBanner.svg';
 import bankPlatformBanner from './bankPlatformBanner.svg';
 import documentFlowSystembanner from './documentFlowSystemBanner.svg';
 import educationalPlatformBanner from './educationalPlatformBanner.svg';
-import productionPlatformBanner from './productionPlatformBanner.svg'
+import productionPlatformBanner from './productionPlatformBanner.svg';
+import portalBanner from './portalBanner.svg';
 
 export {
   whatsappSvg,
@@ -20,4 +21,5 @@ export {
   documentFlowSystembanner,
   educationalPlatformBanner,
   productionPlatformBanner,
+  portalBanner,
 };

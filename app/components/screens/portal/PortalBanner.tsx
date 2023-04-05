@@ -1,5 +1,5 @@
-import { developmentSvg, telegramSvg } from "@/assets/images/home";
-import { whatsappSvg } from "@/assets/images/shared";
+import { telegramSvg } from "@/assets/images/home";
+import { whatsappSvg, portalBanner } from "@/assets/images/shared";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -15,9 +15,9 @@ const PortalBanner = () => {
         <div className="container">
           <div className={styles.portalBannerBody}>
             <div className={styles.info}>
-              <h1>Разработка портала</h1>
+              <h1>Порталы для цифровизации бизнеса и госуправления</h1>
               <p>
-                Разработка портала от 300 000 рублей с технической
+                Разработка портала от 500 000 руб, интеграцией с любыми ПО и
                 поддержкой на 5 лет
               </p>
               <button onClick={() => setIsOpenPopup(true)}>
@@ -35,7 +35,7 @@ const PortalBanner = () => {
             <div>
               <Image
                 className={styles.image}
-                src={developmentSvg}
+                src={portalBanner}
                 alt="Приложение"
               />
             </div>
