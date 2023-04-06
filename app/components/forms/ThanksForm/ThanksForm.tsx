@@ -10,7 +10,7 @@ import RadioInput from "../common/RadioInput/RadioInput";
 import {formData} from './formdata';
 import styles from "./ThanksForm.module.scss";
 
-interface IThanksParams {
+export interface IThanksParams {
   phone: string;
   name: string;
   clientsCount: string;
@@ -24,7 +24,7 @@ interface IThanksParams {
 const ThanksForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-
+  const [currentStep, setCurrentStep] = useState(1);
   const { name, phone } = useContext(FormContext);
 
   const router = useRouter();
@@ -38,11 +38,17 @@ const ThanksForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid }
   } = useForm<IThanksParams>({
     mode: "onSubmit",
     defaultValues: { name: name, phone: phone },
   });
+
+  const handleNextClick = () => {
+    if (currentStep !== formData.length) {
+       setCurrentStep(p => p + 1);
+    }
+  }
 
   const onSubmit = (data: any) => {
     setIsLoading(true);
@@ -75,9 +81,7 @@ const ThanksForm = () => {
         </Link>
       </>
     );
-  } 
-
-  const [firstStep, secondStep, thirdStep, fourthStep] = formData;
+  }
 
   return (
     <>
@@ -86,26 +90,26 @@ const ThanksForm = () => {
           Спасибо за заявку, <br />
           Обязательно заполните форму ниже
         </h1>
-        <Radioframe title={firstStep.question} error="">
-          {firstStep.variant.map((variant) => (
-            <RadioInput key={variant} {...register("product", { required: true })} text={variant} />
-          ))}
-        </Radioframe>
-        <Radioframe title={secondStep.question} error="">
-          {secondStep.variant.map((variant) => (
-            <RadioInput key={variant} {...register("optimization", { required: true })} text={variant} />
-          ))}
-        </Radioframe>
-        <Radioframe title={thirdStep.question} error="">
-          {thirdStep.variant.map((variant) => (
-            <RadioInput key={variant} {...register("budget", { required: true })} text={variant} />
-          ))}
-        </Radioframe>
-        <Radioframe title={fourthStep.question} error="">
-          {fourthStep.variant.map((variant) => (
-            <RadioInput key={variant} {...register("clientsCount", { required: true })} text={variant} />
-          ))}
-        </Radioframe>
+        {formData.map(({ step, question, variant, fieldName }) => {
+          if (step !== currentStep) {
+            return null;
+          }
+          return (
+            <Radioframe key={step} title={question} hasError>
+              {/* hasError={!!errors[fieldName]'} */}
+              {variant.map((variant) => (
+                <RadioInput
+                  key={variant}
+                  {...register(fieldName, { required: true })}
+                  text={variant}
+                />
+              ))}
+              <button disabled={!isValid} onClick={handleNextClick} type={currentStep === formData.length? 'submit' : 'button'}>
+                Далее
+              </button>
+            </Radioframe>
+          );
+        })}
         {/* TODO: что с политиками?? */}
         {/* <p>
           Нажимая на кнопку &quot;отправить&quot;, вы соглашаетесь с{" "}
@@ -113,13 +117,6 @@ const ThanksForm = () => {
             Политикой конфиденциальности
           </Link>
         </p> */}
-        <button
-          disabled={!isValid}
-          className={styles.submitBtn}
-          type="submit"
-        >
-          Отправить
-        </button>
       </form>
     </>
   );
