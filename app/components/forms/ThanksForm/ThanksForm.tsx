@@ -2,12 +2,13 @@ import { sendMail } from "@/services/email";
 import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Loader from "@/components/ui/Loader/Loader";
-
 import Link from "next/link";
-
-import styles from "./ThanksForm.module.scss";
 import { useRouter } from "next/router";
 import { FormContext } from "@/utils/FormCollector/FormContext";
+import Radioframe from "../common/RadioFrame/Radioframe";
+import RadioInput from "../common/RadioInput/RadioInput";
+import {formData} from './formdata';
+import styles from "./ThanksForm.module.scss";
 
 interface IThanksParams {
   phone: string;
@@ -37,7 +38,7 @@ const ThanksForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<IThanksParams>({
     mode: "onSubmit",
     defaultValues: { name: name, phone: phone },
@@ -74,7 +75,9 @@ const ThanksForm = () => {
         </Link>
       </>
     );
-  }
+  } 
+
+  const [firstStep, secondStep, thirdStep, fourthStep] = formData;
 
   return (
     <>
@@ -83,286 +86,35 @@ const ThanksForm = () => {
           Спасибо за заявку, <br />
           Обязательно заполните форму ниже
         </h1>
-        <fieldset className={styles.radioInputs}>
-          <legend>
-            Что необходимо разработать?
-            <span className={styles.error}>
-              {errors.product && "Выберите вариант ответа"}
-            </span>
-          </legend>
-          <div className={styles.items}>
-            <div>
-              <input
-                {...register("product", { required: true })}
-                type="radio"
-                value="Мобильное приложение"
-                id="mobile-app"
-              />
-              <label htmlFor="mobile-app">Мобильное приложение</label>
-            </div>
-            <div>
-              <input
-                {...register("product", { required: true })}
-                type="radio"
-                value="CRM/EPR система"
-                id="crm"
-              />
-              <label htmlFor="crm">CRM/EPR систему</label>
-            </div>
-            <div>
-              <input
-                {...register("product", { required: true })}
-                type="radio"
-                value="Мобильное приложение"
-                id="e-commerce-portal"
-              />
-              <label htmlFor="e-commerce-portal">Корпоративный портал</label>
-            </div>
-            <div>
-              <input
-                {...register("product", { required: true })}
-                type="radio"
-                value="Корпоративный сайт"
-                id="e-commerce-site"
-              />
-              <label htmlFor="e-commerce-site">Корпоративный сайт</label>
-            </div>
-            <div>
-              <input
-                {...register("product", { required: true })}
-                type="radio"
-                value="Интернет-магазин"
-                id="e-shop"
-              />
-              <label htmlFor="e-shop">Интернет-магазин</label>
-            </div>
-            <div>
-              <input
-                {...register("product", { required: true })}
-                type="radio"
-                value="Другое"
-                id="other-product"
-              />
-              <label htmlFor="other-product">Другое</label>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset className={styles.radioInputs}>
-          <legend>
-            Какие участки учета хотите оптимизировать?
-            <span className={styles.error}>
-              {errors.optimization && "Выберите вариант ответа"}
-            </span>
-          </legend>
-          <div className={styles.items}>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                id="automatization"
-                value="Полная автоматизация бизнеса"
-              />
-              <label htmlFor="automatization">
-                Полная автоматизация бизнеса
-              </label>
-            </div>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                value="Управление финансами"
-                id="finance"
-              />
-              <label htmlFor="finance">Управление финансами</label>
-            </div>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                value="Документооборот"
-                id="document-flow"
-              />
-              <label htmlFor="document-flow">Документооборот</label>
-            </div>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                value="Складской учет. Управление закупками и продажами"
-                id="warehouse-accounting"
-              />
-              <label htmlFor="warehouse-accounting">
-                Складской учет. Управление закупками и продажами
-              </label>
-            </div>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                id="staff"
-                value="Персонал: кадры, зарплаты, рекрутинг, аттестация и т.д."
-              />
-              <label htmlFor="staff">
-                Персонал: кадры, зарплаты, рекрутинг, аттестация и т.д.
-              </label>
-            </div>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                id="crm-optimization"
-                value="CRM-системы: клиенты, маркетинг, контроль проектов и задач"
-              />
-              <label htmlFor="crm-optimization">
-                CRM-системы: клиенты, маркетинг, контроль проектов и задач
-              </label>
-            </div>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                id="production-control"
-                value="Управление производством"
-              />
-              <label htmlFor="production-control">
-                Управление производством
-              </label>
-            </div>
-            <div>
-              <input
-                {...register("optimization", { required: true })}
-                type="radio"
-                id="other-optimizations"
-                value="Другое"
-              />
-              <label htmlFor="other-optimizations">Другое</label>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset className={styles.radioInputs}>
-          <legend>
-            Какой у вас бюджет?
-            <span className={styles.error}>
-              {errors.budget && "Выберите вариант ответа"}
-            </span>
-          </legend>
-          <div className={styles.items}>
-            <div>
-              <input
-                {...register("budget", { required: true })}
-                value="100 000"
-                type="radio"
-                id="start-b"
-              />
-              <label htmlFor="start-b">100 000 руб</label>
-            </div>
-            <div>
-              <input
-                {...register("budget", { required: true })}
-                value="300 000"
-                type="radio"
-                id="start-b2"
-              />
-              <label htmlFor="start-b2">300 000 руб</label>
-            </div>
-            <div>
-              <input
-                {...register("budget", { required: true })}
-                value="600 000"
-                type="radio"
-                id="start-b3"
-              />
-              <label htmlFor="start-b3">600 000 руб</label>
-            </div>
-            <div>
-              <input
-                {...register("budget", { required: true })}
-                value="600 000"
-                type="radio"
-                id="start-b4"
-              />
-              <label htmlFor="start-b4">1 млн руб</label>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset className={styles.radioInputs}>
-          <legend>
-            Сколько человек будут пользоваться сервисом?
-            <span className={styles.error}>
-              {errors.clientsCount && "Выберите вариант ответа"}
-            </span>
-          </legend>
-          <div className={styles.items}>
-            <div>
-              <input
-                {...register("clientsCount", { required: true })}
-                type="radio"
-                id="low"
-                value="1-10"
-              />
-              <label htmlFor="low">1-10</label>
-            </div>
-
-            <div>
-              <input
-                {...register("clientsCount", { required: true })}
-                type="radio"
-                id="mid"
-                value="10-100"
-              />
-              <label htmlFor="mid">10-100</label>
-            </div>
-
-            <div>
-              <input
-                {...register("clientsCount", { required: true })}
-                type="radio"
-                id="high"
-                value="100-1000"
-              />
-              <label htmlFor="high">100-1000</label>
-            </div>
-
-            <div>
-              <input
-                {...register("clientsCount", { required: true })}
-                type="radio"
-                id="extra-high"
-                value="1000 и более"
-              />
-              <label htmlFor="extra-high">1000 и более</label>
-            </div>
-          </div>
-        </fieldset>
-        <div className={styles.inputBlock}>
-          <label
-            className={errors.wishes ? `${styles.error}` : ""}
-            htmlFor="thanks-wishes"
-          >
-            {errors.wishes ? errors.wishes.message : "Опишите ваш проект"}
-          </label>
-          <textarea
-            placeholder="Введите здесь..."
-            {...register("wishes", { required: "Опишите, пожалуйста, проект" })}
-            id="thanks-wishes"
-          />
-        </div>
-        <p>
-          Нажимая на кнопку "отправить", вы соглашаетесь с{" "}
+        <Radioframe title={firstStep.question} error="">
+          {firstStep.variant.map((variant) => (
+            <RadioInput key={variant} {...register("product", { required: true })} text={variant} />
+          ))}
+        </Radioframe>
+        <Radioframe title={secondStep.question} error="">
+          {secondStep.variant.map((variant) => (
+            <RadioInput key={variant} {...register("optimization", { required: true })} text={variant} />
+          ))}
+        </Radioframe>
+        <Radioframe title={thirdStep.question} error="">
+          {thirdStep.variant.map((variant) => (
+            <RadioInput key={variant} {...register("budget", { required: true })} text={variant} />
+          ))}
+        </Radioframe>
+        <Radioframe title={fourthStep.question} error="">
+          {fourthStep.variant.map((variant) => (
+            <RadioInput key={variant} {...register("clientsCount", { required: true })} text={variant} />
+          ))}
+        </Radioframe>
+        {/* TODO: что с политиками?? */}
+        {/* <p>
+          Нажимая на кнопку &quot;отправить&quot;, вы соглашаетесь с{" "}
           <Link target="_blank" href="/policy">
             Политикой конфиденциальности
           </Link>
-        </p>
+        </p> */}
         <button
-          disabled={
-            errors.phone ||
-            errors.name ||
-            errors.clientsCount ||
-            errors.contactPreference ||
-            errors.wishes
-              ? true
-              : false
-          }
+          disabled={!isValid}
           className={styles.submitBtn}
           type="submit"
         >
