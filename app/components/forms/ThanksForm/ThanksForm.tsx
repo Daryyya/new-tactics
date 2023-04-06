@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { FormContext } from "@/utils/FormCollector/FormContext";
 import Radioframe from "../common/RadioFrame/Radioframe";
 import RadioInput from "../common/RadioInput/RadioInput";
-import {formData} from './formdata';
+import { formData } from "./formdata";
 import styles from "./ThanksForm.module.scss";
 
 export interface IThanksParams {
@@ -38,7 +38,7 @@ const ThanksForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid }
+    formState: { errors, isValid },
   } = useForm<IThanksParams>({
     mode: "onSubmit",
     defaultValues: { name: name, phone: phone },
@@ -46,9 +46,9 @@ const ThanksForm = () => {
 
   const handleNextClick = () => {
     if (currentStep !== formData.length) {
-       setCurrentStep(p => p + 1);
+      setCurrentStep((p) => p + 1);
     }
-  }
+  };
 
   const onSubmit = (data: any) => {
     setIsLoading(true);
@@ -95,16 +95,24 @@ const ThanksForm = () => {
             return null;
           }
           return (
-            <Radioframe key={step} title={question} hasError>
+            <Radioframe key={step} title={question} hasError step={step}>
               {/* hasError={!!errors[fieldName]'} */}
-              {variant.map((variant) => (
-                <RadioInput
-                  key={variant}
-                  {...register(fieldName, { required: true })}
-                  text={variant}
-                />
-              ))}
-              <button disabled={!isValid} onClick={handleNextClick} type={currentStep === formData.length? 'submit' : 'button'}>
+              <div className={styles.variants}>
+                {variant.map((variant) => (
+                  <RadioInput
+                    key={variant}
+                    {...register(fieldName, { required: true })}
+                    text={variant}
+                  />
+                ))}
+              </div>
+
+              <button
+                className={styles.nextBtn}
+                disabled={!isValid}
+                onClick={handleNextClick}
+                type={currentStep === formData.length ? "submit" : "button"}
+              >
                 Далее
               </button>
             </Radioframe>

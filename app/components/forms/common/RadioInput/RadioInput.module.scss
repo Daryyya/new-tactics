@@ -1,4 +1,12 @@
 .check {
+  padding-left: 44px;
+  font-size: 16px;
+  line-height: 124%;
+  font-weight: 400;
+  font-family: "Inter";
+  cursor: pointer;
+  width: 270px;
+  margin-bottom: 30px;
 }
 
 .check__input {
@@ -14,19 +22,18 @@
 
 .check__box {
   position: absolute;
-  margin-top: 0.2em;
-  margin-left: -1em;
-  width: 0.6em;
-  height: 0.6em;
-  border-radius: 0.05em;
+  margin-top: 1px;
+  margin-left: -34px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   background-color: white;
-  box-shadow: 0 0 0 0.1em red;
 }
 
 .check__input:checked + .check__box {
-  background-color: red;
+  background-color: #8000FF;
+  border: 3px solid white;
 }
 
 .check__input:hover + .check__box {
-  box-shadow: 0 0 0 0.1em red, 0 0 0 0.2em blue;
 }

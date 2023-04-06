@@ -11,6 +11,7 @@
 .thanksForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 27px;
 }
 
@@ -110,4 +111,29 @@
   justify-content: center;
   align-items: center;
   color: red;
+}
+
+.nextBtn {
+  align-self: flex-end;
+  padding: 19px 52px;
+  background-color: #EAD1A6;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 124%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $yellowHover;
+    color: white;
+  }
+  &:disabled {
+    background:lightgray;
+  }
+}
+
+.variants {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
 }
