@@ -13,10 +13,11 @@ const Radioframe: FC<Props> = ({ children, className = "", title, hasError, step
   return (
     <div className={`${s.wrapper} ${className}`}>
       <div className={s.steps}>
-        <span className={step === 1 ? `${s.activeStep} ${s.step}`: `${s.step}`}>1</span>
-        <span className={step === 2 ? `${s.activeStep} ${s.step}`: `${s.step}`}>2</span>
-        <span className={step === 3 ? `${s.activeStep} ${s.step}`: `${s.step}`}>3</span>
-        <span className={step === 4 ? `${s.activeStep} ${s.step}`: `${s.step}`}>4</span>
+        {[1,2,3,4].map(el => (
+          <span key={el} className={step === el ? `${s.activeStep} ${s.step}`: `${s.step}`}>
+            {el}
+          </span>
+        ))}
       </div>
       <h2 className={s.title}>
         {title}

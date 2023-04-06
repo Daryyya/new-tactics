@@ -38,14 +38,17 @@ const ThanksForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    trigger,
+    formState: { errors },
   } = useForm<IThanksParams>({
-    mode: "onSubmit",
+    mode: "all",
     defaultValues: { name: name, phone: phone },
   });
 
-  const handleNextClick = () => {
-    if (currentStep !== formData.length) {
+  const handleNextClick = async (fName: keyof IThanksParams) => {
+    const isValid = await trigger(fName)
+
+    if (isValid && currentStep !== formData.length) {
       setCurrentStep((p) => p + 1);
     }
   };
@@ -95,8 +98,7 @@ const ThanksForm = () => {
             return null;
           }
           return (
-            <Radioframe key={step} title={question} hasError step={step}>
-              {/* hasError={!!errors[fieldName]'} */}
+            <Radioframe key={step} title={question} hasError={!!errors[fieldName]} step={step}>
               <div className={styles.variants}>
                 {variant.map((variant) => (
                   <RadioInput
@@ -109,8 +111,7 @@ const ThanksForm = () => {
 
               <button
                 className={styles.nextBtn}
-                disabled={!isValid}
-                onClick={handleNextClick}
+                onClick={() => handleNextClick(fieldName)}
                 type={currentStep === formData.length ? "submit" : "button"}
               >
                 Далее
