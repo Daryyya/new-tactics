@@ -1,0 +1,51 @@
+@import '../../../../assets/styles/mixins.scss';
+
+.check {
+  padding-left: 44px;
+  @include adaptiv-value('font-size', 16, 14, 0);
+  line-height: 124%;
+  font-weight: 400;
+  font-family: "Inter";
+  cursor: pointer;
+  width: 270px;
+  @include adaptiv-value('margin-bottom', 30, 20, 0);
+
+  @media (min-width: 576px) {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+}
+
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.check__box {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: -34px;
+  @include adaptiv-value('width', 20, 15, 0);
+  @include adaptiv-value('height', 20, 15, 0);
+  border-radius: 50%;
+  background-color: white;
+
+  @media (min-width: 576px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.check__input:checked + .check__box {
+  background-color: #8000FF;
+  border: 3px solid white;
+}
+
+.check__input:hover + .check__box {
+}
