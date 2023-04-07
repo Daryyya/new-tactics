@@ -1,12 +1,19 @@
+@import '../../../../assets/styles/mixins.scss';
+
 .check {
   padding-left: 44px;
-  font-size: 16px;
+  @include adaptiv-value('font-size', 16, 14, 0);
   line-height: 124%;
   font-weight: 400;
   font-family: "Inter";
   cursor: pointer;
   width: 270px;
-  margin-bottom: 30px;
+  @include adaptiv-value('margin-bottom', 30, 20, 0);
+
+  @media (min-width: 576px) {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
 }
 
 .check__input {
@@ -24,10 +31,15 @@
   position: absolute;
   margin-top: 1px;
   margin-left: -34px;
-  width: 20px;
-  height: 20px;
+  @include adaptiv-value('width', 20, 15, 0);
+  @include adaptiv-value('height', 20, 15, 0);
   border-radius: 50%;
   background-color: white;
+
+  @media (min-width: 576px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .check__input:checked + .check__box {

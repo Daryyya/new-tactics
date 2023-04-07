@@ -15,89 +15,6 @@
   gap: 27px;
 }
 
-.radioInputs {
-  border: 1px solid #6f29e1;
-  padding: 10px 15px;
-
-  legend {
-    position: relative;
-    font-family: "Unbounded";
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    margin-bottom: 17px;
-  }
-
-  .items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 21px;
-  }
-}
-
-.inputBlock {
-  border: 1px solid #6f29e1;
-  border-radius: 5px;
-  padding: 12px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  label {
-    @include adaptiv-value("font-size", 16, 12, 0);
-    line-height: 19px;
-    font-family: "Unbounded", cursive;
-    font-weight: 500;
-  }
-  input {
-    background: none;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    line-height: 18px;
-    width: 100%;
-    &::placeholder {
-      color: #b4b4b4;
-    }
-  }
-
-  textarea {
-    height: 100px;
-    resize: none;
-    background: none;
-    border: none;
-    color: white;
-    outline: none;
-    font-size: 15px;
-    line-height: 18px;
-    &::placeholder {
-      color: #b4b4b4;
-    }
-  }
-}
-
-.submitBtn {
-  background: $yellow;
-  @include adaptiv-value("font-size", 18, 13, 0);
-  line-height: 21px;
-  @include adaptiv-value("padding-top", 13, 8, 0);
-  @include adaptiv-value("padding-bottom", 13, 8, 0);
-  border-radius: 5px;
-  line-height: 21px;
-  transition: all 0.2s ease;
-  &:hover {
-    background: $yellowHover;
-    color: white;
-  }
-  &:disabled {
-    background: gray;
-    &:hover {
-      background: gray;
-      color: black;
-    }
-  }
-}
-
 .error {
   position: absolute;
   left: 0;
@@ -115,11 +32,14 @@
 
 .nextBtn {
   align-self: flex-end;
-  padding: 19px 52px;
+  @include adaptiv-value('padding-top', 19, 15, 0);
+  @include adaptiv-value('padding-bottom', 19, 15, 0);
+  @include adaptiv-value('padding-left', 52, 30, 0);
+  @include adaptiv-value('padding-right', 52, 30, 0);
   background-color: #EAD1A6;
   border-radius: 5px;
   font-weight: 700;
-  font-size: 18px;
+  @include adaptiv-value('font-size', 18, 16, 0);
   line-height: 124%;
   transition: all 0.2s ease;
 
@@ -130,10 +50,17 @@
   &:disabled {
     background:lightgray;
   }
+
+  @media (max-width: 991px) {
+    align-self: center;
+  }
 }
 
 .variants {
   display: flex;
   flex-wrap: wrap;
   column-gap: 50px;
+  @media (max-width: 1200px) {
+    justify-content: center;
+  }
 }
