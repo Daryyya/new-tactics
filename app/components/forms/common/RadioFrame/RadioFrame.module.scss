@@ -1,15 +1,15 @@
-@import '../../../../assets/styles/mixins.scss';
+@import "../../../../assets/styles/mixins.scss";
 
 .wrapper {
-  @include adaptiv-value('width', 1000, 300, 0);
+  @include adaptiv-value("width", 1000, 300, 0);
   border-radius: 10px;
   border: none;
   background-color: #220f35;
   height: fit-content;
-  @include adaptiv-value('padding-top', 30, 20, 0);
-  @include adaptiv-value('padding-bottom', 30, 20, 0);
-  @include adaptiv-value('padding-left', 45, 20, 0);
-  @include adaptiv-value('padding-right', 45, 20, 0);
+  @include adaptiv-value("padding-top", 30, 20, 0);
+  @include adaptiv-value("padding-bottom", 30, 20, 0);
+  @include adaptiv-value("padding-left", 45, 20, 0);
+  @include adaptiv-value("padding-right", 45, 20, 0);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,6 +66,11 @@
   border-radius: 50%;
   color: #68557a;
   border: 1px solid;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(0.95);
+  }
 }
 
 .activeStep {

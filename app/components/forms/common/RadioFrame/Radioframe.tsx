@@ -7,14 +7,19 @@ interface Props {
   title: string;
   hasError: boolean;
   step: number;
+  setCurrentStep: (el: number) => void;
 }
 
-const Radioframe: FC<Props> = ({ children, className = "", title, hasError, step }) => {
+const Radioframe: FC<Props> = ({ children, className = "", title, hasError, step, setCurrentStep }) => {
   return (
     <div className={`${s.wrapper} ${className}`}>
       <div className={s.steps}>
         {[1,2,3,4].map(el => (
-          <span key={el} className={step === el ? `${s.activeStep} ${s.step}`: `${s.step}`}>
+          <span key={el} className={step === el ? `${s.activeStep} ${s.step}`: `${s.step}`} onClick={() => {
+            if (step > el) {
+              setCurrentStep(el);
+            }
+          }}>
             {el}
           </span>
         ))}

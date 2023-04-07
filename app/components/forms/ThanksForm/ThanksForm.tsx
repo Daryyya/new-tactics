@@ -98,7 +98,7 @@ const ThanksForm = () => {
             return null;
           }
           return (
-            <Radioframe key={step} title={question} hasError={!!errors[fieldName]} step={step}>
+            <Radioframe key={step} title={question} hasError={!!errors[fieldName]} step={step} setCurrentStep={setCurrentStep}>
               <div className={styles.variants}>
                 {variant.map((variant) => (
                   <RadioInput
