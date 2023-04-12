@@ -1,16 +1,17 @@
 import Layout from "@/components/layout/Layout";
-import Case4 from "@/components/screens/Case4/Case4";
+import Case5 from "@/components/screens/Case5/Case5";
+
 
 import { NextPage } from "next";
 
 const Case4Page: NextPage = () => {
   return (
     <Layout
-      title="Спорт-Отели"
+      title="CRM-системы для образовательных услуг"
       description="description"
       keywords={["Разработка", "Мобильные приложения"]}
     >
-      <Case4 />
+    <Case5/>
     </Layout>
   );
 };
