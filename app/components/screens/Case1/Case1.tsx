@@ -4,7 +4,7 @@ import case1 from "../../../assets/images/cases/case-1-4x.png";
 
 import s from "./Case1.module.scss";
 
-const MobileBanner: FC = () => {
+const Case1: FC = () => {
   return (
     <section className={s.case__wrapper}>
       <div className="container">
@@ -96,4 +96,4 @@ const MobileBanner: FC = () => {
   );
 };
 
-export default MobileBanner;
+export default Case1;
