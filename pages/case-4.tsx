@@ -1,18 +1,18 @@
 import Layout from "@/components/layout/Layout";
-import Case3 from "@/components/screens/Case3/Case3";
+import Case4 from "@/components/screens/Case4/Case4";
 
 import { NextPage } from "next";
 
-const Case3Page: NextPage = () => {
+const Case4Page: NextPage = () => {
   return (
     <Layout
       title="Architechik"
       description="description"
       keywords={["Разработка", "Мобильные приложения"]}
     >
-      <Case3/>
+      <Case4 />
     </Layout>
   );
 };
 
-export default Case3Page;
+export default Case4Page;
