@@ -1,18 +1,19 @@
 import Layout from "@/components/layout/Layout";
 import Case2 from "@/components/screens/Case2/Case2";
+import Case3 from "@/components/screens/Case3/Case3";
 
 import { NextPage } from "next";
 
-const Case2Page: NextPage = () => {
+const Case3Page: NextPage = () => {
   return (
     <Layout
-      title="Boomerang App"
+      title="Architechik"
       description="description"
       keywords={["Разработка", "Мобильные приложения"]}
     >
-      <Case2/>
+      <Case3/>
     </Layout>
   );
 };
 
-export default Case2Page;
+export default Case3Page;

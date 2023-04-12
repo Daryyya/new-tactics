@@ -2,7 +2,7 @@ import Layout from "@/components/layout/Layout";
 import Case1 from "../app/components/screens/Case1/Case1";
 import { NextPage } from "next";
 
-const Mobile: NextPage = () => {
+const Case1Page: NextPage = () => {
   return (
     <Layout
       title="Союз Ветеранов Спорта"
@@ -14,4 +14,4 @@ const Mobile: NextPage = () => {
   );
 };
 
-export default Mobile;
+export default Case1Page;
