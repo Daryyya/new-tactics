@@ -1,11 +1,15 @@
 import { FC } from "react";
-import styles from "./Cases.module.scss";
+import styles from "./UniqeCase.module.scss";
 import { motion } from "framer-motion";
+import {ICasesData} from '../../../utils/cases.data'
 
-import { casesData } from "@/utils/cases.data";
-import CasesItem from "./CasesItem";
+import CasesItem from "./UniqeCaseItem/UniqueCaseItem";
 
-const Cases: FC = () => {
+interface Props {
+    data: ICasesData[];
+}
+
+const UniqeCase: FC<Props> = ({data}) => {
   return (
     <section id="cases" className={styles.cases}>
       <div className="container">
@@ -24,7 +28,7 @@ const Cases: FC = () => {
           </motion.h2>
         </div>
         <div className={styles.casesItems}>
-          {casesData.map((item) => (
+          {data.map((item) => (
             <CasesItem
               key={item.id}
               id={item.id}
@@ -40,4 +44,4 @@ const Cases: FC = () => {
   );
 };
 
-export default Cases;
+export default UniqeCase;

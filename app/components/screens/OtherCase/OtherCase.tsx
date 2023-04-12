@@ -1,11 +1,15 @@
 import { FC } from "react";
-import styles from "./Cases.module.scss";
+import styles from "./OtherCase.module.scss";
 import { motion } from "framer-motion";
+import {ICasesData} from '../../../utils/cases.data'
 
-import { casesData } from "@/utils/cases.data";
-import CasesItem from "./CasesItem";
+import CasesItem from "./OtherCaseItem/OtherCaseItem";
 
-const Cases: FC = () => {
+interface Props {
+    data: ICasesData[];
+}
+
+const OtherCase: FC<Props> = ({data}) => {
   return (
     <section id="cases" className={styles.cases}>
       <div className="container">
@@ -20,11 +24,11 @@ const Cases: FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <span>02 |</span> Кейсы
+            Все кейсы
           </motion.h2>
         </div>
         <div className={styles.casesItems}>
-          {casesData.map((item) => (
+          {data.map((item) => (
             <CasesItem
               key={item.id}
               id={item.id}
@@ -40,4 +44,4 @@ const Cases: FC = () => {
   );
 };
 
-export default Cases;
+export default OtherCase;
