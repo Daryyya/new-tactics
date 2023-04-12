@@ -9,15 +9,22 @@ import Purpose from "@/components/screens/home/Purpose/Purpose";
 import { Reviews } from "@/components/screens/home/Reviews/Reviews";
 import Services from "@/components/screens/home/Services/Services";
 import { Team } from "@/components/screens/home/Team/Team";
+import OtherCase from "@/components/screens/OtherCase/OtherCase";
+import UniqeCase from "@/components/screens/UniqeCase/UniqeCase";
 import { BuyWidget } from "@/components/widgets/BuyWidget";
+import { casesData } from "@/utils/cases.data";
 import React from "react";
 
 const DigitalSystem = () => {
+  let idList = [6]
+  let filteredUniqeArray = casesData.filter(el => idList.includes(el.id))
+  let filteredOtherArray = casesData.filter(el => !idList.includes(el.id))
   return (
     <Layout title="Разработка экосистемы" description="description">
       <DigitalSystemBanner />
       <Services />
-      <Cases />
+      <UniqeCase data={filteredUniqeArray}/>
+      <OtherCase data={filteredOtherArray}/>
       <About />
       <Purpose />
       <Mission />
