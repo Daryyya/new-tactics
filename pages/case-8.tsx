@@ -1,6 +1,5 @@
 import Layout from "@/components/layout/Layout";
 import Case8 from "@/components/screens/Case8/Case8";
-// import Case6 from "@/components/screens/Case6/Case6";
 import { NextPage } from "next";
 
 const Case8Page: NextPage = () => {

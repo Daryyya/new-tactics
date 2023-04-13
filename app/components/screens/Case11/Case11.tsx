@@ -74,7 +74,7 @@ const Case11: FC = () => {
           <Image
             className={s.case__image}
             src={case11}
-            alt="case1"
+            alt="case11"
             width={678}
             height={450}
           />

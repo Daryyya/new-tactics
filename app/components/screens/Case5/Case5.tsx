@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import case2 from "../../../assets/images/cases/case-5-4x.png";
+import case5 from "../../../assets/images/cases/case-5-4x.png";
 import s from "./Case5.module.scss";
 
 const Case5 = () => {
@@ -11,8 +11,8 @@ const Case5 = () => {
           <div className={s.case__hero}>
             <Image
               className={s.case__image}
-              src={case2}
-              alt="case2"
+              src={case5}
+              alt="case5"
               width={479}
               height={421}
             />

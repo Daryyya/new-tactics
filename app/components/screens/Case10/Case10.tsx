@@ -12,7 +12,7 @@ const Case10 = () => {
             <Image
               className={s.case__image}
               src={case10}
-              alt="case2"
+              alt="case10"
               width={479}
               height={421}
             />

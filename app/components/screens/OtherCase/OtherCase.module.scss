@@ -10,6 +10,9 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 21px;
+    @media (max-width: 1250px) {
+      justify-content: center;
+    }
     @media (max-width: 992px) {
       flex-direction: column;
       align-items: center;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
-import case1 from "../../../assets/images/cases/case-3-4x.png";
+import case3 from "../../../assets/images/cases/case-3-4x.png";
 
 import s from "./Case3.module.scss";
 
@@ -74,7 +74,7 @@ const Case3: FC = () => {
           <div className={s.case__result}>Более 500 оплаченных подписок</div>
           <Image
             className={s.case__image}
-            src={case1}
+            src={case3}
             alt="case3"
             width={359}
             height={724}

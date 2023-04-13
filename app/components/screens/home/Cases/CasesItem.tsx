@@ -20,7 +20,7 @@ const CasesItem: FC<Omit<ICasesData, "description">> = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={styles.casesItem}
-      onClick={() => router.push(`case/${id}`)}
+      onClick={() => router.push(`case-${id}`)}
     >
       <img src={imageUrl} alt="кейс" />
       <div className={styles.hoverBlock}>
