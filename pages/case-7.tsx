@@ -1,17 +1,17 @@
 import Layout from "@/components/layout/Layout";
-import Case6 from "@/components/screens/Case6/Case6";
+import Case7 from "@/components/screens/Case7/Case7";
 import { NextPage } from "next";
 
-const Case6Page: NextPage = () => {
+const Case7Page: NextPage = () => {
   return (
     <Layout
       title="Экосистема корпоративного обслуживания и документооборота"
       description="description"
       keywords={["Разработка", "Мобильные приложения"]}
     >
-      <Case6/>
+      <Case7/>
     </Layout>
   );
 };
 
-export default Case6Page;
+export default Case7Page;
