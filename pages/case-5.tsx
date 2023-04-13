@@ -4,7 +4,7 @@ import Case5 from "@/components/screens/Case5/Case5";
 
 import { NextPage } from "next";
 
-const Case4Page: NextPage = () => {
+const Case5Page: NextPage = () => {
   return (
     <Layout
       title="CRM-системы для образовательных услуг"
@@ -16,4 +16,4 @@ const Case4Page: NextPage = () => {
   );
 };
 
-export default Case4Page;
+export default Case5Page;
