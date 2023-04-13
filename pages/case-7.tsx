@@ -5,7 +5,7 @@ import { NextPage } from "next";
 const Case7Page: NextPage = () => {
   return (
     <Layout
-      title="Экосистема корпоративного обслуживания и документооборота"
+      title="Корпоративная система для оптимизации логистики"
       description="description"
       keywords={["Разработка", "Мобильные приложения"]}
     >

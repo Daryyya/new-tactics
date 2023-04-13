@@ -1,0 +1,68 @@
+@import "../../../assets/styles/mixins";
+
+.case__wrapper {
+  @include adaptiv-value("padding-top", 100, 30, 0);
+  @include adaptiv-value("padding-bottom", 100, 30, 0);
+}
+
+.case__body {
+}
+
+.case__hero {
+  margin-bottom: 29px;
+  display: flex;
+  gap: 100px;
+}
+
+.case__image {
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.case__info {
+}
+
+.case__title {
+  font-weight: 500;
+  @include adaptiv-value("font-size", 42, 24, 0);
+  line-height: 123%;
+  color: #ead1a6;
+  margin-bottom: 35px;
+}
+
+.case__text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 135%;
+  margin-bottom: 20px;
+}
+
+.case__text:last-of-type {
+  margin-bottom: 80px;
+}
+
+.case__results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 991px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.case__result {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 135%;
+  color: #ead1a6;
+  @include adaptiv-value("padding-top", 33, 15, 0);
+  @include adaptiv-value("padding-bottom", 33, 15, 0);
+  @include adaptiv-value("padding-right", 33, 15, 0);
+  @include adaptiv-value("padding-left", 33, 15, 0);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+}
