@@ -77,7 +77,7 @@ const Case3: FC = () => {
             src={case3}
             alt="case3"
             width={359}
-            height={724}
+            height={684}
           />
         </div>
       </div>
